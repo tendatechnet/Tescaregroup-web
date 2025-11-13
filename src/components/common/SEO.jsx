@@ -1,78 +1,102 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const SEO = ({
-    title = 'TES Care Group - Professional Healthcare Staffing',
-    description = 'Reliable aged-care staffing solutions across Australia. Connecting qualified healthcare professionals with facilities that need them. 24/7 availability for emergency staffing needs.',
-    keywords = 'aged care staffing, healthcare staffing, nursing staff, care assistants, aged care facilities, healthcare professionals, staffing agency Australia, emergency staffing, temporary staffing, permanent placements',
-    image = '/og-image.jpg',
-    url = '',
-    type = 'website',
+  title = 'TES Care Group - Professional Healthcare Staffing',
+  description = 'Reliable aged-care staffing solutions across Australia. Connecting qualified healthcare professionals with facilities that need them. 24/7 availability for emergency staffing needs.',
+  keywords = 'aged care staffing, healthcare staffing, nursing staff, care assistants, aged care facilities, healthcare professionals, staffing agency Australia, emergency staffing, temporary staffing, permanent placements',
+  image = '/og-image.jpg',
+  url = '',
+  type = 'website',
 }) => {
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://tescaregroup.com.au';
-    const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-    const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://tescaregroup.com.au';
+  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
+  const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
-    return (
-        <Helmet>
-            {/* Primary Meta Tags */}
-            <title>{title}</title>
-            <meta name="title" content={title} />
-            <meta name="description" content={description} />
-            <meta name="keywords" content={keywords} />
-            <meta name="author" content="TES Care Group" />
-            <meta name="robots" content="index, follow" />
-            <meta name="language" content="English" />
-            <meta name="revisit-after" content="7 days" />
+  useEffect(() => {
+    // Update document title
+    document.title = title;
 
-            {/* Open Graph / Facebook */}
-            <meta property="og:type" content={type} />
-            <meta property="og:url" content={fullUrl} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={imageUrl} />
-            <meta property="og:site_name" content="TES Care Group" />
-            <meta property="og:locale" content="en_AU" />
+    // Update or create meta tags
+    const updateMetaTag = (name, content, isProperty = false) => {
+      const attribute = isProperty ? 'property' : 'name';
+      let element = document.querySelector(`meta[${attribute}="${name}"]`);
+      
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
 
-            {/* Twitter */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:url" content={fullUrl} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={imageUrl} />
+    // Primary Meta Tags
+    updateMetaTag('title', title);
+    updateMetaTag('description', description);
+    updateMetaTag('keywords', keywords);
+    updateMetaTag('author', 'TES Care Group');
+    updateMetaTag('robots', 'index, follow');
+    updateMetaTag('language', 'English');
+    updateMetaTag('revisit-after', '7 days');
+    updateMetaTag('theme-color', '#002147');
 
-            {/* Additional SEO */}
-            <meta name="theme-color" content="#002147" />
-            <link rel="canonical" href={fullUrl} />
+    // Open Graph / Facebook
+    updateMetaTag('og:type', type, true);
+    updateMetaTag('og:url', fullUrl, true);
+    updateMetaTag('og:title', title, true);
+    updateMetaTag('og:description', description, true);
+    updateMetaTag('og:image', imageUrl, true);
+    updateMetaTag('og:site_name', 'TES Care Group', true);
+    updateMetaTag('og:locale', 'en_AU', true);
 
-            {/* Structured Data */}
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'Organization',
-                    name: 'TES Care Group',
-                    url: siteUrl,
-                    logo: `${siteUrl}/logo.png`,
-                    description: description,
-                    address: {
-                        '@type': 'PostalAddress',
-                        addressCountry: 'AU',
-                        addressRegion: ['VIC', 'QLD', 'NSW'],
-                    },
-                    contactPoint: {
-                        '@type': 'ContactPoint',
-                        telephone: '+61-XXX-XXX-XXX',
-                        contactType: 'Customer Service',
-                        areaServed: 'AU',
-                        availableLanguage: 'English',
-                    },
-                    sameAs: [
-                        // Add social media links when available
-                    ],
-                })}
-            </script>
-        </Helmet>
-    );
+    // Twitter
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:url', fullUrl);
+    updateMetaTag('twitter:title', title);
+    updateMetaTag('twitter:description', description);
+    updateMetaTag('twitter:image', imageUrl);
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', fullUrl);
+
+    // Structured Data
+    let structuredData = document.querySelector('script[type="application/ld+json"]');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'TES Care Group',
+      url: siteUrl,
+      logo: `${siteUrl}/logo.png`,
+      description: description,
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'AU',
+        addressRegion: ['VIC', 'QLD', 'NSW'],
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+61-XXX-XXX-XXX',
+        contactType: 'Customer Service',
+        areaServed: 'AU',
+        availableLanguage: 'English',
+      },
+      sameAs: [
+        // Add social media links when available
+      ],
+    });
+  }, [title, description, keywords, imageUrl, fullUrl, type, siteUrl]);
+
+  return null;
 };
 
 export default SEO;
-
