@@ -81,10 +81,10 @@ export const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy mb-6">
+                                <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
                                     Who We Are
                                 </h2>
-                                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                                <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
                                     <p>
                                         TES Care Group is a dedicated healthcare staffing provider focused on solving one of the industry's biggest challenges — consistent, reliable staffing. We connect qualified, compassionate professionals with aged-care facilities across Australia.
                                     </p>
@@ -131,42 +131,42 @@ export const About = () => {
                             >
                                 <Card className="bg-gradient-to-br from-warm-beige to-powder-blue border-none">
                                     <div className="flex items-start gap-4 mb-6">
-                                        <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-royal-blue rounded-xl flex items-center justify-center flex-shrink-0">
                                             <Heart size={24} className="text-white" />
                                         </div>
                                         <div>
-                                            <h3 className="text-3xl font-heading font-bold text-navy mb-4">
+                                            <h3 className="text-3xl font-heading font-bold text-royal-blue mb-4">
                                                 Our Mission
                                             </h3>
-                                            <p className="text-gray-800 leading-relaxed text-lg mb-6">
+                                            <p className="text-gray-800 leading-relaxed text-lg mb-6 font-medium">
                                                 To ensure every aged-care facility has reliable access to skilled professionals when they need them, enabling consistent, high-quality care for residents across Australia.
                                             </p>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-navy rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
                                                     <div>
-                                                        <h4 className="font-semibold text-navy mb-1">Reliable Access</h4>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Reliable Access</h4>
                                                         <p className="text-gray-700 text-sm">Ensuring facilities always have access to qualified staff when needed</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-navy rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
                                                     <div>
-                                                        <h4 className="font-semibold text-navy mb-1">Skilled Professionals</h4>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Skilled Professionals</h4>
                                                         <p className="text-gray-700 text-sm">Connecting facilities with fully vetted, qualified healthcare workers</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-navy rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
                                                     <div>
-                                                        <h4 className="font-semibold text-navy mb-1">Consistent Support</h4>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Consistent Support</h4>
                                                         <p className="text-gray-700 text-sm">Providing ongoing, reliable staffing solutions for long-term success</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-navy rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
                                                     <div>
-                                                        <h4 className="font-semibold text-navy mb-1">Quality Care</h4>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Quality Care</h4>
                                                         <p className="text-gray-700 text-sm">Enabling facilities to deliver exceptional care through consistent staffing</p>
                                                     </div>
                                                 </div>

@@ -35,14 +35,14 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
               About TES Care Group
             </h2>
-            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
               <p>
                 TES Care Group is a dedicated healthcare staffing provider connecting qualified, compassionate professionals with aged-care facilities across Australia.
               </p>
-              <p className="font-semibold text-navy">
+              <p className="font-semibold text-royal-blue">
                 We exist to solve one of the industry's biggest challenges — consistent, reliable staffing.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
@@ -66,16 +66,16 @@ export const About = () => {
             </div>
             <div className="mt-8 grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-4xl font-bold text-navy mb-1">24/7</div>
-                <div className="text-sm text-gray-600">Available</div>
+                <div className="text-4xl font-bold text-royal-blue mb-1">24/7</div>
+                <div className="text-sm text-gray-700 font-medium">Available</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-navy mb-1">500+</div>
-                <div className="text-sm text-gray-600">Professionals</div>
+                <div className="text-4xl font-bold text-royal-blue mb-1">500+</div>
+                <div className="text-sm text-gray-700 font-medium">Professionals</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-navy mb-1">3</div>
-                <div className="text-sm text-gray-600">States</div>
+                <div className="text-4xl font-bold text-royal-blue mb-1">5</div>
+                <div className="text-sm text-gray-700 font-medium">States</div>
               </div>
             </div>
           </motion.div>

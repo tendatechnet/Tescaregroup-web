@@ -51,7 +51,7 @@ export const Testimonials = () => {
     return (
         <section className="py-20 relative overflow-hidden">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-powder-blue/30 via-white to-warm-beige/20"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <motion.div
@@ -61,10 +61,10 @@ export const Testimonials = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy mb-4">
+                        <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue mb-4">
                             Trusted by Leading Aged-Care Providers Nationwide
                         </h2>
-                        <p className="text-gray-600 text-lg">
+                        <p className="text-gray-700 text-lg font-medium">
                             Proudly supporting Residential Aged-Care, Home Care, and Healthcare Services across Australia.
                         </p>
                     </div>
@@ -78,36 +78,36 @@ export const Testimonials = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                             >
-                                <Card className="h-full relative overflow-hidden">
+                                <Card className="h-full relative overflow-hidden bg-gradient-to-br from-powder-blue/40 to-powder-blue/70">
                                     {/* Quote icon background */}
-                                    <Quote className="absolute top-4 right-4 text-warm-beige/10" size={80} />
+                                    <Quote className="absolute top-4 right-4 text-royal-blue/5" size={80} />
 
                                     {/* Rating stars */}
                                     <div className="flex gap-1 mb-4">
                                         {[...Array(testimonial.rating)].map((_, i) => (
-                                            <Star key={i} size={18} className="fill-warm-beige text-warm-beige" />
+                                            <Star key={i} size={18} className="fill-royal-blue text-royal-blue" />
                                         ))}
                                     </div>
 
-                                    <p className="text-gray-700 italic mb-6 leading-relaxed relative z-10">
+                                    <p className="text-gray-800 italic mb-6 leading-relaxed relative z-10 font-medium">
                                         "{testimonial.quote}"
                                     </p>
 
-                                    <div className="border-t pt-4 flex items-center gap-3">
+                                    <div className="border-t border-gray-200 pt-4 flex items-center gap-3">
                                         <img
                                             src={testimonial.image}
                                             alt={testimonial.author}
-                                            className="w-12 h-12 rounded-full object-cover"
+                                            className="w-12 h-12 rounded-full object-cover ring-2 ring-royal-blue/20"
                                             loading="lazy"
                                         />
                                         <div>
-                                            <p className="font-heading font-semibold text-navy">
+                                            <p className="font-heading font-semibold text-royal-blue">
                                                 {testimonial.author}
                                             </p>
-                                            <p className="text-gray-600 text-sm">
+                                            <p className="text-gray-700 text-sm font-medium">
                                                 {testimonial.role}
                                             </p>
-                                            <p className="text-gray-500 text-xs">
+                                            <p className="text-gray-600 text-xs">
                                                 {testimonial.location}
                                             </p>
                                         </div>

@@ -136,7 +136,7 @@ export const Services = () => {
                           className="w-full h-full object-cover"
                           loading="lazy"
                         />
-                        <div className="absolute top-6 left-6 inline-flex items-center justify-center w-16 h-16 bg-white text-navy rounded-xl shadow-lg">
+                        <div className="absolute top-6 left-6 inline-flex items-center justify-center w-16 h-16 bg-powder-blue/90 backdrop-blur-sm text-royal-blue rounded-xl shadow-lg border-2 border-white/50">
                           <service.icon size={32} />
                         </div>
                       </div>

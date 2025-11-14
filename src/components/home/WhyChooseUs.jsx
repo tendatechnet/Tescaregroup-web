@@ -34,7 +34,12 @@ export const WhyChooseUs = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Modern background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-light"></div>
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom right, #162660, #0f1a3f, #1d3577)'
+        }}
+      ></div>
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -52,7 +57,7 @@ export const WhyChooseUs = () => {
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
             TES Care Group delivers fast, reliable, and compliant staffing solutions tailored to the needs of aged-care providers across Australia.
           </h2>
-          <p className="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-white/90 text-lg mb-16 max-w-2xl mx-auto font-medium">
             Dedicated to excellence in aged-care staffing across Australia
           </p>
 
@@ -66,14 +71,14 @@ export const WhyChooseUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:-translate-y-2">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/30 transition-all duration-300 hover:bg-white/25 hover:shadow-2xl hover:-translate-y-2">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-6 shadow-lg`}>
                     <feature.icon size={32} />
                   </div>
                   <h3 className="text-xl font-heading font-semibold text-white mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-white/90 leading-relaxed font-medium">
                     {feature.description}
                   </p>
                 </div>

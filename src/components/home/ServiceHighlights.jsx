@@ -42,10 +42,10 @@ export const ServiceHighlights = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy text-center mb-4">
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue text-center mb-4">
                         Our Services
                     </h2>
-                    <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
+                    <p className="text-center text-gray-700 text-lg mb-16 max-w-3xl mx-auto font-medium">
                         Flexible, reliable, and fully compliant staffing solutions for aged-care and healthcare providers across Australia.
                     </p>
 
@@ -59,19 +59,20 @@ export const ServiceHighlights = () => {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="group"
                             >
-                                <Card className="h-full overflow-hidden">
-                                    <div className="relative h-48 mb-4 -m-6 mb-4">
+                                <Card className="h-full overflow-hidden bg-gradient-to-br from-powder-blue/30 to-powder-blue/60">
+                                    <div className="relative h-48 mb-4 -m-6 mb-4 overflow-hidden rounded-t-xl">
                                         <img
                                             src={service.image}
                                             alt={service.title}
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                             loading="lazy"
                                         />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-royal-blue/20 to-transparent"></div>
                                     </div>
-                                    <h3 className="text-xl font-heading font-semibold text-navy mb-3">
+                                    <h3 className="text-xl font-heading font-semibold text-royal-blue mb-3">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                    <p className="text-gray-700 text-sm leading-relaxed">
                                         {service.description}
                                     </p>
                                 </Card>
