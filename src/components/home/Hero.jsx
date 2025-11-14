@@ -23,23 +23,23 @@ export const Hero = () => {
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="max-w-3xl">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20">
+        <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-tight text-white drop-shadow-2xl">
               Reliable Staffing for Aged-Care Facilities
             </h1>
           </motion.div>
 
           <motion.p
-            className="text-xl md:text-2xl mb-10 text-gray-100 font-body leading-relaxed"
+            className="text-xl md:text-2xl lg:text-3xl mb-12 text-gray-100 font-body leading-relaxed max-w-3xl drop-shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             We connect qualified care professionals with facilities that need them — fast
           </motion.p>
@@ -48,16 +48,16 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
-            <Button to="/request-staff" variant="secondary" size="lg">
+            <Button to="/request-staff" variant="secondary" size="lg" className="text-lg px-8 py-4">
               Request Staff Now
             </Button>
             <Button 
               to="/services" 
               variant="outline" 
               size="lg" 
-              className="!border-white !text-white hover:!bg-white hover:!text-royal-blue"
+              className="!border-white !text-white hover:!bg-white hover:!text-royal-blue text-lg px-8 py-4"
             >
               Our Services
             </Button>

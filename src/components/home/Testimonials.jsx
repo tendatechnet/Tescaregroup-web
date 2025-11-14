@@ -45,11 +45,11 @@ const testimonials = [
 export const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Auto-rotate carousel every 5 seconds
+    // Auto-rotate carousel every 10 seconds (slower)
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);
@@ -64,6 +64,16 @@ export const Testimonials = () => {
 
     const goToSlide = (index) => {
         setCurrentIndex(index);
+    };
+
+    // Get visible testimonials (always 3)
+    const getVisibleTestimonials = () => {
+        const visible = [];
+        for (let i = 0; i < 3; i++) {
+            const index = (currentIndex + i) % testimonials.length;
+            visible.push(testimonials[index]);
+        }
+        return visible;
     };
 
     return (
@@ -88,43 +98,46 @@ export const Testimonials = () => {
                     </div>
 
                     {/* Carousel Container */}
-                    <div className="max-w-4xl mx-auto relative">
+                    <div className="max-w-7xl mx-auto relative">
                         <div className="relative overflow-hidden">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={currentIndex}
-                                    initial={{ opacity: 0, x: 100 }}
+                                    initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    transition={{ duration: 0.5 }}
+                                    exit={{ opacity: 0, x: -50 }}
+                                    transition={{ duration: 0.6 }}
+                                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                                 >
-                                    <Card className="relative overflow-hidden bg-gradient-to-br from-powder-blue/40 to-powder-blue/70">
-                                        {/* Quote icon background */}
-                                        <Quote className="absolute top-4 right-4 text-royal-blue/5" size={80} />
+                                    {getVisibleTestimonials().map((testimonial, idx) => (
+                                        <Card key={`${currentIndex}-${idx}`} className="relative overflow-hidden bg-gradient-to-br from-powder-blue/40 to-powder-blue/70 h-full">
+                                            {/* Quote icon background */}
+                                            <Quote className="absolute top-4 right-4 text-royal-blue/5" size={60} />
 
-                                        {/* Rating stars */}
-                                        <div className="flex gap-1 mb-4">
-                                            {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                                                <Star key={i} size={18} className="fill-royal-blue text-royal-blue" />
-                                            ))}
-                                        </div>
+                                            {/* Rating stars */}
+                                            <div className="flex gap-1 mb-3">
+                                                {[...Array(testimonial.rating)].map((_, i) => (
+                                                    <Star key={i} size={16} className="fill-royal-blue text-royal-blue" />
+                                                ))}
+                                            </div>
 
-                                        <p className="text-gray-800 italic mb-6 leading-relaxed relative z-10 font-medium text-lg">
-                                            "{testimonials[currentIndex].quote}"
-                                        </p>
+                                            <p className="text-gray-800 italic mb-4 leading-relaxed relative z-10 font-medium text-base">
+                                                "{testimonial.quote}"
+                                            </p>
 
-                                        <div className="border-t border-gray-200 pt-4">
-                                            <p className="font-heading font-semibold text-royal-blue mb-1 text-lg">
-                                                {testimonials[currentIndex].author}
-                                            </p>
-                                            <p className="text-gray-700 text-sm font-medium mb-1">
-                                                {testimonials[currentIndex].role}
-                                            </p>
-                                            <p className="text-gray-600 text-xs">
-                                                {testimonials[currentIndex].location}
-                                            </p>
-                                        </div>
-                                    </Card>
+                                            <div className="border-t border-gray-200 pt-3">
+                                                <p className="font-heading font-semibold text-royal-blue mb-1">
+                                                    {testimonial.author}
+                                                </p>
+                                                <p className="text-gray-700 text-sm font-medium mb-1">
+                                                    {testimonial.role}
+                                                </p>
+                                                <p className="text-gray-600 text-xs">
+                                                    {testimonial.location}
+                                                </p>
+                                            </div>
+                                        </Card>
+                                    ))}
                                 </motion.div>
                             </AnimatePresence>
                         </div>
@@ -152,7 +165,9 @@ export const Testimonials = () => {
                                     key={index}
                                     onClick={() => goToSlide(index)}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                                        index === currentIndex
+                                        index === currentIndex || 
+                                        index === (currentIndex + 1) % testimonials.length ||
+                                        index === (currentIndex + 2) % testimonials.length
                                             ? 'bg-royal-blue w-8'
                                             : 'bg-gray-300 hover:bg-royal-blue/50'
                                     }`}
