@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import SEO from '../components/common/SEO';
 import { Card } from '../components/common/Card';
-import { Button } from '../components/common/Button';
 import { ContactStrip } from '../components/common/ContactStrip';
-import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { ContactForm } from '../components/forms/ContactForm';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export const Contact = () => {
   return (
@@ -21,31 +21,6 @@ export const Contact = () => {
 };
 
 const ContactContent = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('Contact form submitted:', formData);
-
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
-  };
 
   return (
     <div className="min-h-screen">
@@ -168,74 +143,7 @@ const ContactContent = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="shadow-xl bg-gradient-to-br from-powder-blue/30 to-powder-blue/60">
-                <h3 className="text-3xl font-heading font-bold text-royal-blue mb-6">
-                  Send Us a Message
-                </h3>
-
-                {isSubmitted ? (
-                  <div className="text-center py-12">
-                    <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-4" />
-                    <p className="text-xl text-gray-700">
-                      Thank you! We'll be in touch soon.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white"
-                        placeholder="John Smith"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message <span className="text-red-500">*</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={6}
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-navy focus:border-transparent transition-all resize-none"
-                        placeholder="How can we help you?"
-                      />
-                    </div>
-
-                    <Button type="submit" variant="primary" className="w-full" size="lg">
-                      Send Message
-                    </Button>
-                  </form>
-                )}
-              </Card>
+              <ContactForm />
             </motion.div>
           </div>
         </div>

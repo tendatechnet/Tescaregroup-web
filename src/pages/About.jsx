@@ -112,7 +112,7 @@ export const About = () => {
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-navy/10 rounded-full blur-3xl -z-10"></div>
+                                <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-royal-blue/10 rounded-full blur-3xl -z-10"></div>
                             </motion.div>
                         </div>
                     </div>

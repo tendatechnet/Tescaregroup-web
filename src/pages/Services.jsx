@@ -144,7 +144,7 @@ export const Services = () => {
 
                     {/* Content */}
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <h3 className="text-3xl font-heading font-bold text-navy mb-4">
+                      <h3 className="text-3xl font-heading font-bold text-royal-blue mb-4">
                         {service.title}
                       </h3>
                       <p className="text-gray-700 mb-6 leading-relaxed text-lg">
@@ -153,7 +153,7 @@ export const Services = () => {
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <ClipboardCheck className="text-navy mt-1 flex-shrink-0" size={22} />
+                            <ClipboardCheck className="text-royal-blue mt-1 flex-shrink-0" size={22} />
                             <span className="text-gray-600">{feature}</span>
                           </li>
                         ))}
@@ -175,7 +175,7 @@ export const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy text-center mb-4">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue text-center mb-4">
                 How It Works
               </h2>
               <p className="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
@@ -195,7 +195,7 @@ export const Services = () => {
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-navy to-navy-light text-white rounded-2xl text-3xl font-bold mb-6 shadow-xl">
                       {step.number}
                     </div>
-                    <h3 className="text-2xl font-heading font-semibold text-navy mb-3">
+                    <h3 className="text-2xl font-heading font-semibold text-royal-blue mb-3">
                       {step.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -221,7 +221,7 @@ export const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-heading font-bold text-navy mb-6">
+              <h2 className="text-4xl font-heading font-bold text-royal-blue mb-6">
                 Ready to Get Started?
               </h2>
               <p className="text-gray-700 text-lg mb-10">
