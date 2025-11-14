@@ -6,28 +6,44 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
     {
-        quote: "TES Care Group consistently provides us with highly qualified staff. Their response time is exceptional, and the quality of care professionals they send is outstanding.",
-        author: "Sarah Mitchell",
-        role: "Facility Manager",
-        location: "Melbourne, VIC",
+        quote: "TES Care Group has transformed our staffing operations. Their rapid response and consistently high-quality professionals have made them an indispensable partner for our facility.",
+        author: "Jennifer Martinez",
+        role: "Director of Care",
+        location: "Perth, WA",
         rating: 5,
         image: "https://images.unsplash.com/photo-1603129473525-4cd6f36fe057?q=80&w=200",
     },
     {
-        quote: "We've been working with TES Care Group for over two years. Their 24/7 availability has been a lifesaver for our emergency staffing needs.",
-        author: "Dr. James Chen",
-        role: "Director of Nursing",
-        location: "Sydney, NSW",
+        quote: "The reliability and professionalism of TES Care Group's staff is unmatched. They understand the unique challenges of aged care and always deliver.",
+        author: "Michael O'Brien",
+        role: "Facility Manager",
+        location: "Adelaide, SA",
         rating: 5,
         image: "https://images.unsplash.com/photo-1589104759909-e355f8999f7e?q=80&w=200",
     },
     {
-        quote: "Professional, reliable, and always available when we need them. TES Care Group has become an essential partner in delivering quality care to our residents.",
-        author: "Rebecca Thompson",
-        role: "Care Coordinator",
-        location: "Brisbane, QLD",
+        quote: "We've relied on TES Care Group for over three years. Their 24/7 support and compliance-driven approach gives us complete confidence in every placement.",
+        author: "Dr. Sarah Chen",
+        role: "Clinical Director",
+        location: "Melbourne, VIC",
         rating: 5,
         image: "https://images.unsplash.com/photo-1739932885175-5fdaa1bd5989?q=80&w=200",
+    },
+    {
+        quote: "TES Care Group's contract staffing solutions have been perfect for our medium-term needs. The quality of their registered nurses and AINs is exceptional.",
+        author: "David Thompson",
+        role: "Operations Manager",
+        location: "Brisbane, QLD",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
+    },
+    {
+        quote: "Their emergency call-out service has saved us countless times. TES Care Group truly understands the urgency of aged-care staffing and responds immediately.",
+        author: "Lisa Anderson",
+        role: "Nurse Manager",
+        location: "Sydney, NSW",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=200",
     },
 ];
 
@@ -46,14 +62,14 @@ export const Testimonials = () => {
                 >
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy mb-4">
-                            Trusted by Aged-Care Providers
+                            Trusted by Leading Aged-Care Providers Nationwide
                         </h2>
                         <p className="text-gray-600 text-lg">
-                            Across Australia
+                            Proudly supporting Residential Aged-Care, Home Care, and Healthcare Services across Australia.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {testimonials.map((testimonial, index) => (
                             <motion.div
                                 key={index}
@@ -64,12 +80,12 @@ export const Testimonials = () => {
                             >
                                 <Card className="h-full relative overflow-hidden">
                                     {/* Quote icon background */}
-                                    <Quote className="absolute top-4 right-4 text-gold/10" size={80} />
+                                    <Quote className="absolute top-4 right-4 text-warm-beige/10" size={80} />
 
                                     {/* Rating stars */}
                                     <div className="flex gap-1 mb-4">
                                         {[...Array(testimonial.rating)].map((_, i) => (
-                                            <Star key={i} size={18} className="fill-gold text-gold" />
+                                            <Star key={i} size={18} className="fill-warm-beige text-warm-beige" />
                                         ))}
                                     </div>
 

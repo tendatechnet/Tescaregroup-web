@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, UserPlus } from 'lucide-react';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-2xl font-heading font-bold mb-4">TES Care Group</h3>
                         <p className="text-gray-300 leading-relaxed">
-                            Reliable aged-care staffing solutions across Australia. Connecting qualified professionals with facilities that need them.
+                            Dedicated healthcare staffing across Australia. We connect qualified, compassionate professionals with aged-care facilities, disability services, and community organisations nationwide.
                         </p>
                     </div>
 
@@ -22,27 +22,27 @@ export const Footer = () => {
                         <h4 className="text-lg font-heading font-semibold mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="/" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/" className="text-gray-300 hover:text-warm-beige transition">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/about" className="text-gray-300 hover:text-warm-beige transition">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/services" className="text-gray-300 hover:text-warm-beige transition">
                                     Services
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/request-staff" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/request-staff" className="text-gray-300 hover:text-warm-beige transition">
                                     Request Staff
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/contact" className="text-gray-300 hover:text-warm-beige transition">
                                     Contact
                                 </Link>
                             </li>
@@ -54,7 +54,7 @@ export const Footer = () => {
                         <h4 className="text-lg font-heading font-semibold mb-4">Our Services</h4>
                         <ul className="space-y-2 text-gray-300">
                             <li>Temporary Staffing</li>
-                            <li>Permanent Placements</li>
+                            <li>Contract Staffing</li>
                             <li>Emergency Call-Outs</li>
                             <li>Specialized Care Roles</li>
                         </ul>
@@ -66,23 +66,32 @@ export const Footer = () => {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-2">
                                 <Phone className="flex-shrink-0 mt-1" size={18} />
-                                <a href="tel:+61-XXX-XXX-XXX" className="text-gray-300 hover:text-gold transition">
+                                <a href="tel:+61-XXX-XXX-XXX" className="text-gray-300 hover:text-warm-beige transition">
                                     +61 XXX XXX XXX
                                 </a>
                             </li>
                             <li className="flex items-start gap-2">
                                 <Mail className="flex-shrink-0 mt-1" size={18} />
-                                <a href="mailto:info@tescaregroup.com.au" className="text-gray-300 hover:text-gold transition break-all">
+                                <a href="mailto:info@tescaregroup.com.au" className="text-gray-300 hover:text-warm-beige transition break-all">
                                     info@tescaregroup.com.au
                                 </a>
                             </li>
                             <li className="flex items-start gap-2">
                                 <MapPin className="flex-shrink-0 mt-1" size={18} />
                                 <span className="text-gray-300">
-                                    Serving VIC, QLD & NSW
+                                    Serving NSW, VIC, QLD, WA, SA
                                 </span>
                             </li>
+                            <li className="text-gray-300 text-sm">
+                                Available 24/7 for staffing support
+                            </li>
                         </ul>
+                        <div className="mt-6">
+                            <Link to="/request-staff" className="inline-flex items-center gap-2 bg-warm-beige hover:bg-powder-blue text-royal-blue font-semibold px-6 py-3 rounded-lg transition-colors">
+                                <UserPlus size={20} />
+                                Request Staff
+                            </Link>
+                        </div>
                     </div>
                 </div>
 

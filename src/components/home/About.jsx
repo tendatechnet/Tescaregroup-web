@@ -25,7 +25,7 @@ export const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent"></div>
             </div>
             {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gold/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-warm-beige/20 rounded-full blur-3xl -z-10"></div>
           </motion.div>
 
           {/* Content Section */}
@@ -40,11 +40,29 @@ export const About = () => {
             </h2>
             <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
               <p>
-                TES Care Group is a leading aged-care staffing agency dedicated to connecting qualified healthcare professionals with facilities across Australia. With years of experience in the industry, we understand the critical importance of reliable, skilled staff in delivering exceptional care to our elderly community.
+                TES Care Group is a dedicated healthcare staffing provider connecting qualified, compassionate professionals with aged-care facilities across Australia.
               </p>
-              <p>
-                Our mission is to ensure that every aged-care facility has access to the right professionals at the right time, maintaining the highest standards of care and support for residents.
+              <p className="font-semibold text-navy">
+                We exist to solve one of the industry's biggest challenges — consistent, reliable staffing.
               </p>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-warm-beige rounded-full"></div>
+                  <span className="font-semibold">Quality</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-warm-beige rounded-full"></div>
+                  <span className="font-semibold">Reliability</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-warm-beige rounded-full"></div>
+                  <span className="font-semibold">Professionalism</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-warm-beige rounded-full"></div>
+                  <span className="font-semibold">Care</span>
+                </div>
+              </div>
             </div>
             <div className="mt-8 grid grid-cols-3 gap-6">
               <div className="text-center">

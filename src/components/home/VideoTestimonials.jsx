@@ -98,7 +98,7 @@ export const VideoTestimonials = () => {
 
                                         {/* Play button */}
                                         <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-gold">
+                                            <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:bg-warm-beige">
                                                 <Play size={32} className="text-navy ml-1" fill="currentColor" />
                                             </div>
                                         </div>
@@ -152,7 +152,7 @@ export const VideoTestimonials = () => {
                             {/* Close button */}
                             <button
                                 onClick={closeVideo}
-                                className="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-colors z-10"
+                                className="absolute -top-12 right-0 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-colors z-10"
                                 aria-label="Close video"
                             >
                                 <X size={24} />

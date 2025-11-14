@@ -9,25 +9,25 @@ const services = [
     {
         icon: UserCheck,
         title: 'Temporary Staffing',
-        description: 'Flexible short-term staffing solutions to cover shifts, holidays, and unexpected absences.',
+        description: 'Flexible short-term staffing solutions to cover roster gaps, sick leave, shifts, holidays, and unexpected absences.',
         image: 'https://images.unsplash.com/photo-1631558556874-1d127211f574?q=80&w=600',
     },
     {
         icon: BriefcaseMedical,
-        title: 'Permanent Placements',
-        description: 'Find the perfect long-term care professionals to join your team permanently.',
+        title: 'Contract Staffing',
+        description: 'Reliable medium- to long-term care professionals available on contract to support your facility\'s ongoing needs.',
         image: 'https://images.unsplash.com/photo-1589104759909-e355f8999f7e?q=80&w=600',
     },
     {
         icon: AlertCircle,
         title: 'Emergency Call-Outs',
-        description: '24/7 emergency staffing service for last-minute and urgent care needs.',
+        description: '24/7 rapid-response emergency staffing service for last-minute and urgent care needs in high-demand care situations.',
         image: 'https://images.unsplash.com/photo-1623852516990-b92586f7dd5c?q=80&w=600',
     },
     {
         icon: Stethoscope,
         title: 'Specialized Care Roles',
-        description: 'Registered nurses, care assistants, and specialized healthcare professionals.',
+        description: 'Registered nurses, AINs, support workers, and specialized healthcare professionals.',
         image: 'https://images.unsplash.com/photo-1653508311277-1ecf6ee52c5e?q=80&w=600',
     },
 ];
@@ -46,7 +46,7 @@ export const ServiceHighlights = () => {
                         Our Services
                     </h2>
                     <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
-                        Comprehensive staffing solutions tailored to your aged-care facility's needs
+                        Flexible, reliable, and fully compliant staffing solutions for aged-care and healthcare providers across Australia.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -67,11 +67,6 @@ export const ServiceHighlights = () => {
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                             loading="lazy"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-4">
-                                            <div className="inline-flex items-center justify-center w-12 h-12 bg-white text-navy rounded-lg">
-                                                <service.icon size={24} />
-                                            </div>
-                                        </div>
                                     </div>
                                     <h3 className="text-xl font-heading font-semibold text-navy mb-3">
                                         {service.title}

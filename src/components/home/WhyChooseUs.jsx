@@ -6,25 +6,25 @@ import { motion } from 'framer-motion';
 const features = [
   {
     icon: Clock,
-    title: 'Fast Response',
+    title: 'Immediate Staffing Support',
     description: 'Quick turnaround times to meet your urgent staffing needs',
     color: 'from-blue-500 to-blue-600',
   },
   {
     icon: Users,
-    title: 'Experienced Staff',
+    title: 'Fully Vetted & Qualified Workforce',
     description: 'All professionals are thoroughly vetted and qualified',
     color: 'from-purple-500 to-purple-600',
   },
   {
     icon: Shield,
-    title: '24/7 Availability',
+    title: 'Round-the-Clock Support',
     description: 'Round-the-clock support for emergency staffing requests',
     color: 'from-green-500 to-green-600',
   },
   {
     icon: ThumbsUp,
-    title: 'Quality Assurance',
+    title: 'Compliance-Driven & Reliable',
     description: 'Ongoing training and compliance monitoring',
     color: 'from-orange-500 to-orange-600',
   },
@@ -50,7 +50,7 @@ export const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
-            Why Choose TES Care Group?
+            TES Care Group delivers fast, reliable, and compliant staffing solutions tailored to the needs of aged-care providers across Australia.
           </h2>
           <p className="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">
             Dedicated to excellence in aged-care staffing across Australia
