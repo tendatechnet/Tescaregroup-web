@@ -15,7 +15,12 @@ export const Hero = () => {
           loading="eager"
         />
         {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(22, 38, 96, 0.95), rgba(22, 38, 96, 0.85), rgba(22, 38, 96, 0.60))'
+          }}
+        ></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 py-20">
@@ -48,7 +53,12 @@ export const Hero = () => {
             <Button to="/request-staff" variant="secondary" size="lg">
               Request Staff Now
             </Button>
-            <Button to="/services" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
+            <Button 
+              to="/services" 
+              variant="outline" 
+              size="lg" 
+              className="!border-white !text-white hover:!bg-white hover:!text-royal-blue"
+            >
               Our Services
             </Button>
           </motion.div>

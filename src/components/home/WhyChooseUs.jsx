@@ -61,7 +61,7 @@ export const WhyChooseUs = () => {
             Dedicated to excellence in aged-care staffing across Australia
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -71,14 +71,22 @@ export const WhyChooseUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/30 transition-all duration-300 hover:bg-white/25 hover:shadow-2xl hover:-translate-y-2">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-6 shadow-lg`}>
-                    <feature.icon size={32} />
+                <div 
+                  className="rounded-xl p-6 h-full border transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  style={{
+                    backgroundColor: '#D0E6FD',
+                    borderColor: 'rgba(22, 38, 96, 0.2)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className={`flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} text-white shadow-md`}>
+                      <feature.icon size={16} />
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-royal-blue">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/90 leading-relaxed font-medium">
+                  <p className="text-gray-700 leading-relaxed text-sm font-medium w-full">
                     {feature.description}
                   </p>
                 </div>
