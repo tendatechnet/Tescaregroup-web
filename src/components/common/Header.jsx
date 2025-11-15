@@ -52,9 +52,10 @@ export const Header = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="lg:hidden p-2 text-royal-blue"
+                        className="lg:hidden p-2 text-royal-blue hover:bg-powder-blue/20 rounded-lg transition-colors"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
+                        aria-expanded={isOpen}
                     >
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
