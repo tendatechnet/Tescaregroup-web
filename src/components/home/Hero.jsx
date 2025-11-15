@@ -13,6 +13,9 @@ export const Hero = () => {
           alt="Compassionate elderly care professional with senior"
           className="w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
+          width="1920"
+          height="1080"
         />
         {/* Gradient Overlay for better text readability */}
         <div
