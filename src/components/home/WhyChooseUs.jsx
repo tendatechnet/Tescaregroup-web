@@ -6,25 +6,25 @@ import { motion } from 'framer-motion';
 const features = [
   {
     icon: Clock,
-    title: 'Fast Response',
+    title: 'Immediate Staffing Support',
     description: 'Quick turnaround times to meet your urgent staffing needs',
     color: 'from-blue-500 to-blue-600',
   },
   {
     icon: Users,
-    title: 'Experienced Staff',
+    title: 'Fully Vetted & Qualified Workforce',
     description: 'All professionals are thoroughly vetted and qualified',
     color: 'from-purple-500 to-purple-600',
   },
   {
     icon: Shield,
-    title: '24/7 Availability',
+    title: 'Round-the-Clock Support',
     description: 'Round-the-clock support for emergency staffing requests',
     color: 'from-green-500 to-green-600',
   },
   {
     icon: ThumbsUp,
-    title: 'Quality Assurance',
+    title: 'Compliance-Driven & Reliable',
     description: 'Ongoing training and compliance monitoring',
     color: 'from-orange-500 to-orange-600',
   },
@@ -34,7 +34,12 @@ export const WhyChooseUs = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Modern background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-light"></div>
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom right, #162660, #0f1a3f, #1d3577)'
+        }}
+      ></div>
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -50,13 +55,13 @@ export const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
-            Why Choose TES Care Group?
+            TES Care Group delivers fast, reliable, and compliant staffing solutions tailored to the needs of aged-care providers across Australia.
           </h2>
-          <p className="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-white/90 text-lg mb-16 max-w-2xl mx-auto font-medium">
             Dedicated to excellence in aged-care staffing across Australia
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -66,14 +71,22 @@ export const WhyChooseUs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:-translate-y-2">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-6 shadow-lg`}>
-                    <feature.icon size={32} />
+                <div 
+                  className="rounded-xl p-6 h-full border transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  style={{
+                    backgroundColor: '#D0E6FD',
+                    borderColor: 'rgba(22, 38, 96, 0.2)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className={`flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} text-white shadow-md`}>
+                      <feature.icon size={16} />
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-royal-blue">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-sm font-medium w-full">
                     {feature.description}
                   </p>
                 </div>

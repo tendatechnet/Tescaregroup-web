@@ -34,7 +34,7 @@ export const Admin = () => {
               >
                 View Site
               </button>
-              <Button onClick={handleLogout} variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
+              <Button onClick={handleLogout} variant="outline" className="border-white text-white hover:bg-white hover:text-royal-blue">
                 Logout
               </Button>
             </div>
@@ -55,7 +55,7 @@ export const Admin = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${activeTab === tab.id
-                  ? 'border-navy text-navy'
+                  ? 'border-royal-blue text-royal-blue'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
               >
@@ -91,7 +91,7 @@ const OverviewTab = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-heading font-bold text-navy mb-6">Dashboard Overview</h2>
+      <h2 className="text-2xl font-heading font-bold text-royal-blue mb-6">Dashboard Overview</h2>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -104,7 +104,7 @@ const OverviewTab = () => {
             className="bg-white rounded-xl shadow-md p-6 border border-gray-100"
           >
             <p className="text-sm text-gray-600 mb-2">{stat.label}</p>
-            <p className="text-3xl font-bold text-navy mb-2">{stat.value}</p>
+            <p className="text-3xl font-bold text-royal-blue mb-2">{stat.value}</p>
             <p className={`text-sm ${stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
               {stat.change} from last week
             </p>
@@ -114,7 +114,7 @@ const OverviewTab = () => {
 
       {/* Recent Activity */}
       <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-        <h3 className="text-xl font-heading font-bold text-navy mb-4">Recent Activity</h3>
+        <h3 className="text-xl font-heading font-bold text-royal-blue mb-4">Recent Activity</h3>
         <div className="space-y-4">
           {[
             { action: 'New staff request received', facility: 'Sunrise Aged Care', time: '2 hours ago' },
@@ -184,7 +184,7 @@ const RequestsTab = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-heading font-bold text-navy">Staff Requests</h2>
+        <h2 className="text-2xl font-heading font-bold text-royal-blue">Staff Requests</h2>
         <Button variant="primary">Export Report</Button>
       </div>
 
@@ -216,7 +216,7 @@ const RequestsTab = () => {
             <tbody className="bg-white divide-y divide-gray-200">
               {requests.map((request) => (
                 <tr key={request.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-navy">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-royal-blue">
                     {request.id}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -254,12 +254,12 @@ const SettingsTab = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-heading font-bold text-navy mb-6">Admin Settings</h2>
+      <h2 className="text-2xl font-heading font-bold text-royal-blue mb-6">Admin Settings</h2>
 
       <div className="space-y-6">
         {/* Account Settings */}
         <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-          <h3 className="text-lg font-heading font-bold text-navy mb-4">Account Settings</h3>
+          <h3 className="text-lg font-heading font-bold text-royal-blue mb-4">Account Settings</h3>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Email Notifications</label>
@@ -282,7 +282,7 @@ const SettingsTab = () => {
 
         {/* System Settings */}
         <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-          <h3 className="text-lg font-heading font-bold text-navy mb-4">System Settings</h3>
+          <h3 className="text-lg font-heading font-bold text-royal-blue mb-4">System Settings</h3>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>

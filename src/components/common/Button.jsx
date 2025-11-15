@@ -16,9 +16,9 @@ export const Button = ({
   const baseStyles = 'inline-flex items-center justify-center font-heading font-semibold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
 
   const variantStyles = {
-    primary: 'bg-navy text-white hover:bg-navy-dark shadow-lg hover:shadow-xl',
-    secondary: 'bg-gold text-navy hover:bg-gold-light shadow-md hover:shadow-lg',
-    outline: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
+    primary: 'bg-royal-blue text-white hover:bg-royal-blue-dark shadow-lg hover:shadow-xl',
+    secondary: 'bg-warm-beige text-royal-blue hover:bg-powder-blue shadow-md hover:shadow-lg',
+    outline: 'border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white',
   };
 
   const sizeStyles = {

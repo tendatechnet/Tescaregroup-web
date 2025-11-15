@@ -21,7 +21,7 @@ export const Home = () => {
         <About />
         <WhyChooseUs />
         <ServiceHighlights />
-        <VideoTestimonials />
+        {/* <VideoTestimonials /> */}
         <Testimonials />
         <ContactStrip />
       </div>

@@ -9,27 +9,27 @@ import { Heart, Users, Award, MapPin } from 'lucide-react';
 const values = [
     {
         icon: Heart,
-        title: 'Care',
-        description: 'We prioritize compassionate, person-centered care in everything we do',
-        gradient: 'from-red-500 to-pink-500',
+        title: 'Quality',
+        description: 'We prioritize excellence in every placement, ensuring all professionals meet the highest standards of care and compliance',
+        gradient: 'from-purple-500 to-purple-600',
     },
     {
         icon: Users,
-        title: 'Professionalism',
-        description: 'Maintaining the highest standards of conduct and expertise',
-        gradient: 'from-blue-500 to-cyan-500',
+        title: 'Reliability',
+        description: 'Consistent, dependable staffing solutions you can count on, available 24/7 to meet your facility\'s needs',
+        gradient: 'from-purple-500 to-purple-600',
     },
     {
         icon: Award,
-        title: 'Reliability',
-        description: 'Consistent, dependable service you can count on',
-        gradient: 'from-amber-500 to-orange-500',
+        title: 'Professionalism',
+        description: 'Maintaining the highest standards of conduct, expertise, and compliance in all our staffing placements',
+        gradient: 'from-purple-500 to-purple-600',
     },
     {
         icon: MapPin,
-        title: 'Community',
-        description: 'Building strong partnerships with facilities and care providers',
-        gradient: 'from-green-500 to-emerald-500',
+        title: 'Care',
+        description: 'Compassionate, person-centered care is at the heart of every professional we connect with your facility',
+        gradient: 'from-purple-500 to-purple-600',
     },
 ];
 
@@ -65,7 +65,7 @@ export const About = () => {
                                 About TES Care Group
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-100">
-                                Your trusted partner in aged-care staffing excellence
+                                Supporting aged-care providers with consistent, reliable staffing across Australia.
                             </p>
                         </motion.div>
                     </div>
@@ -81,18 +81,18 @@ export const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy mb-6">
+                                <h2 className="text-4xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
                                     Who We Are
                                 </h2>
-                                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                                <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
                                     <p>
-                                        TES Care Group is a leading aged-care staffing agency with a singular mission: to connect qualified healthcare professionals with facilities that need them, ensuring the highest quality of care for Australia's elderly community.
+                                        TES Care Group is a dedicated healthcare staffing provider focused on solving one of the industry's biggest challenges — consistent, reliable staffing. We connect qualified, compassionate professionals with aged-care facilities across Australia.
                                     </p>
                                     <p>
-                                        Founded on the principles of excellence, reliability, and compassion, we've built our reputation by consistently delivering skilled professionals who share our commitment to outstanding aged care.
+                                        Our mission is to ensure every aged-care facility has reliable access to skilled professionals when they need them. We understand that staffing gaps can impact care quality, which is why we've built our entire operation around reliability, compliance, and consistent support.
                                     </p>
                                     <p>
-                                        Our team understands the challenges faced by aged-care facilities in maintaining adequate staffing levels. That's why we've developed streamlined processes, maintain a robust network of qualified professionals, and offer 24/7 support to ensure you're never left short-handed.
+                                        Through streamlined processes, a robust network of qualified professionals, and 24/7 availability, we provide the consistent staffing support that aged-care providers need to deliver exceptional care to their residents.
                                     </p>
                                 </div>
                             </motion.div>
@@ -112,7 +112,7 @@ export const About = () => {
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-navy/10 rounded-full blur-3xl -z-10"></div>
+                                <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-royal-blue/10 rounded-full blur-3xl -z-10"></div>
                             </motion.div>
                         </div>
                     </div>
@@ -121,46 +121,112 @@ export const About = () => {
                 {/* Vision & Mission */}
                 <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
                     <div className="container mx-auto px-4">
-                        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div className="max-w-5xl mx-auto space-y-12">
+                            {/* Mission Section */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
                             >
-                                <Card className="h-full bg-gradient-to-br from-navy to-navy-dark text-white border-none">
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <Award size={24} className="text-navy" />
+                                <Card className="bg-gradient-to-br from-warm-beige to-powder-blue border-none">
+                                    <div className="flex items-start gap-4 mb-6">
+                                        <div className="w-12 h-12 bg-royal-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                                            <Heart size={24} className="text-white" />
                                         </div>
-                                        <h3 className="text-3xl font-heading font-bold">
-                                            Our Vision
-                                        </h3>
+                                        <div>
+                                            <h3 className="text-3xl font-heading font-bold text-royal-blue mb-4">
+                                                Our Mission
+                                            </h3>
+                                            <p className="text-gray-800 leading-relaxed text-lg mb-6 font-medium">
+                                                To ensure every aged-care facility has reliable access to skilled professionals when they need them, enabling consistent, high-quality care for residents across Australia.
+                                            </p>
+                                            <div className="grid md:grid-cols-2 gap-4">
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Reliable Access</h4>
+                                                        <p className="text-gray-700 text-sm">Ensuring facilities always have access to qualified staff when needed</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Skilled Professionals</h4>
+                                                        <p className="text-gray-700 text-sm">Connecting facilities with fully vetted, qualified healthcare workers</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Consistent Support</h4>
+                                                        <p className="text-gray-700 text-sm">Providing ongoing, reliable staffing solutions for long-term success</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-royal-blue mb-1">Quality Care</h4>
+                                                        <p className="text-gray-700 text-sm">Enabling facilities to deliver exceptional care through consistent staffing</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p className="text-gray-100 leading-relaxed text-lg">
-                                        To be Australia's most trusted aged-care staffing partner, setting the industry standard for quality, reliability, and compassionate care delivery.
-                                    </p>
                                 </Card>
                             </motion.div>
 
+                            {/* Vision Section */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                             >
-                                <Card className="h-full bg-gradient-to-br from-gold to-gold-light border-none">
-                                    <div className="flex items-start gap-4 mb-4">
-                                        <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <Heart size={24} className="text-white" />
+                                <Card className="h-full bg-gradient-to-br from-navy to-navy-dark text-white border-none">
+                                    <div className="flex items-start gap-4 mb-6">
+                                        <div className="w-12 h-12 bg-warm-beige rounded-xl flex items-center justify-center flex-shrink-0">
+                                            <Award size={24} className="text-royal-blue" />
                                         </div>
-                                        <h3 className="text-3xl font-heading font-bold text-navy">
-                                            Our Mission
-                                        </h3>
+                                        <div>
+                                            <h3 className="text-3xl font-heading font-bold mb-4">
+                                                Our Vision
+                                            </h3>
+                                            <p className="text-gray-100 leading-relaxed text-lg mb-6">
+                                                To be Australia's most trusted staffing partner for aged-care providers, setting the industry standard for reliability, compliance, and comprehensive service coverage.
+                                            </p>
+                                            <div className="grid md:grid-cols-2 gap-4">
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-warm-beige mb-1">Industry Leadership</h4>
+                                                        <p className="text-gray-300 text-sm">Setting the standard for aged-care staffing excellence</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-warm-beige mb-1">National Coverage</h4>
+                                                        <p className="text-gray-300 text-sm">Serving facilities across all Australian states and territories</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-warm-beige mb-1">Trusted Partnership</h4>
+                                                        <p className="text-gray-300 text-sm">Building long-term relationships with aged-care providers</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-warm-beige mb-1">Comprehensive Service</h4>
+                                                        <p className="text-gray-300 text-sm">Offering complete staffing solutions from temporary to contract roles</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p className="text-gray-800 leading-relaxed text-lg">
-                                        To ensure every aged-care facility has access to qualified, compassionate professionals when they need them, enabling exceptional care for residents across Australia.
-                                    </p>
                                 </Card>
                             </motion.div>
                         </div>
@@ -168,19 +234,28 @@ export const About = () => {
                 </section>
 
                 {/* Core Values */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4">
+                <section className="py-20 relative overflow-hidden">
+                    {/* Modern background pattern */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-light"></div>
+                    <div className="absolute inset-0 opacity-5">
+                        <div className="absolute inset-0" style={{
+                            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+                            backgroundSize: '50px 50px'
+                        }}></div>
+                    </div>
+
+                    <div className="container mx-auto px-4 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy text-center mb-4">
+                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
                                 Our Core Values
                             </h2>
-                            <p className="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
-                                The principles that guide everything we do
+                            <p className="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">
+                                The principles behind our commitment to quality aged-care
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -191,18 +266,19 @@ export const About = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        className="relative group"
                                     >
-                                        <Card className="text-center h-full group hover:shadow-2xl transition-all duration-300">
-                                            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${value.gradient} text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                                <value.icon size={36} />
+                                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:-translate-y-2">
+                                            <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${value.gradient} text-white mb-6 shadow-lg`}>
+                                                <value.icon size={32} />
                                             </div>
-                                            <h3 className="text-2xl font-heading font-semibold text-navy mb-3">
+                                            <h3 className="text-xl font-heading font-semibold text-white mb-3">
                                                 {value.title}
                                             </h3>
-                                            <p className="text-gray-600 leading-relaxed">
+                                            <p className="text-gray-300 leading-relaxed">
                                                 {value.description}
                                             </p>
-                                        </Card>
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
@@ -234,7 +310,7 @@ export const About = () => {
                                 Where We Operate
                             </h2>
                             <p className="text-xl text-gray-100 leading-relaxed">
-                                TES Care Group provides comprehensive staffing solutions across Victoria, Queensland, and New South Wales, serving aged-care facilities in metropolitan and regional areas. Our extensive network ensures we can meet your staffing needs wherever you are.
+                                TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
                             </p>
                         </motion.div>
                     </div>

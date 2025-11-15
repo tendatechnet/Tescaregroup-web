@@ -1,48 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, UserPlus } from 'lucide-react';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-navy text-white">
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <footer className="bg-gradient-to-br from-royal-blue via-royal-blue-dark to-royal-blue-light text-white">
+            <div className="container mx-auto px-4 lg:px-8 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Company Info */}
-                    <div>
-                        <h3 className="text-2xl font-heading font-bold mb-4">TES Care Group</h3>
-                        <p className="text-gray-300 leading-relaxed">
-                            Reliable aged-care staffing solutions across Australia. Connecting qualified professionals with facilities that need them.
+                    <div className="lg:col-span-1">
+                        <h3 className="text-3xl font-heading font-bold mb-6 text-white">TES Care Group</h3>
+                        <p className="text-white/90 leading-relaxed text-base">
+                            Dedicated healthcare staffing across Australia. We connect qualified, compassionate professionals with aged-care facilities, disability services, and community organisations nationwide.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-heading font-semibold mb-4">Quick Links</h4>
-                        <ul className="space-y-2">
+                        <h4 className="text-lg font-heading font-semibold mb-6 text-white">Quick Links</h4>
+                        <ul className="space-y-3">
                             <li>
-                                <Link to="/" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/" className="text-white/90 hover:text-white transition-colors duration-300 inline-block hover:translate-x-1">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/about" className="text-white/90 hover:text-white transition-colors duration-300 inline-block hover:translate-x-1">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/services" className="text-white/90 hover:text-white transition-colors duration-300 inline-block hover:translate-x-1">
                                     Services
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/request-staff" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/request-staff" className="text-white/90 hover:text-white transition-colors duration-300 inline-block hover:translate-x-1">
                                     Request Staff
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="text-gray-300 hover:text-gold transition">
+                                <Link to="/contact" className="text-white/90 hover:text-white transition-colors duration-300 inline-block hover:translate-x-1">
                                     Contact
                                 </Link>
                             </li>
@@ -51,46 +51,71 @@ export const Footer = () => {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-lg font-heading font-semibold mb-4">Our Services</h4>
-                        <ul className="space-y-2 text-gray-300">
-                            <li>Temporary Staffing</li>
-                            <li>Permanent Placements</li>
-                            <li>Emergency Call-Outs</li>
-                            <li>Specialized Care Roles</li>
+                        <h4 className="text-lg font-heading font-semibold mb-6 text-white">Our Services</h4>
+                        <ul className="space-y-3 text-white/90">
+                            <li className="hover:text-white transition-colors duration-300">Temporary Staffing</li>
+                            <li className="hover:text-white transition-colors duration-300">Contract Staffing</li>
+                            <li className="hover:text-white transition-colors duration-300">Emergency Call-Outs</li>
+                            <li className="hover:text-white transition-colors duration-300">Specialized Care Roles</li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-heading font-semibold mb-4">Contact Us</h4>
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-2">
-                                <Phone className="flex-shrink-0 mt-1" size={18} />
-                                <a href="tel:+61-XXX-XXX-XXX" className="text-gray-300 hover:text-gold transition">
+                        <h4 className="text-lg font-heading font-semibold mb-6 text-white">Contact Us</h4>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3">
+                                <Phone className="flex-shrink-0 mt-1 text-white/80" size={20} />
+                                <a href="tel:+61-XXX-XXX-XXX" className="text-white/90 hover:text-white transition-colors duration-300">
                                     +61 XXX XXX XXX
                                 </a>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <Mail className="flex-shrink-0 mt-1" size={18} />
-                                <a href="mailto:info@tescaregroup.com.au" className="text-gray-300 hover:text-gold transition break-all">
+                            <li className="flex items-start gap-3">
+                                <Mail className="flex-shrink-0 mt-1 text-white/80" size={20} />
+                                <a href="mailto:info@tescaregroup.com.au" className="text-white/90 hover:text-white transition-colors duration-300 break-all">
                                     info@tescaregroup.com.au
                                 </a>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <MapPin className="flex-shrink-0 mt-1" size={18} />
-                                <span className="text-gray-300">
-                                    Serving VIC, QLD & NSW
+                            <li className="flex items-start gap-3">
+                                <MapPin className="flex-shrink-0 mt-1 text-white/80" size={20} />
+                                <span className="text-white/90">
+                                    Serving NSW, VIC, QLD, WA, SA
                                 </span>
                             </li>
+                            <li className="text-white/80 text-sm">
+                                Available 24/7 for staffing support
+                            </li>
                         </ul>
+                        <div className="mt-6">
+                            <Link to="/request-staff" className="inline-flex items-center gap-2 bg-warm-beige hover:bg-powder-blue text-royal-blue font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                                <UserPlus size={20} />
+                                Request Staff
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-700 pt-8 text-center">
-                    <p className="text-gray-300">
-                        © {currentYear} TES Care Group. All rights reserved.
-                    </p>
+                <div className="border-t border-white/20 pt-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-white/80 text-sm">
+                            TES Care Group © {currentYear}. All rights reserved.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                            <Link to="/terms" className="text-white/80 hover:text-white text-sm transition-colors duration-300">
+                                Terms & Conditions
+                            </Link>
+                            <Link to="/privacy" className="text-white/80 hover:text-white text-sm transition-colors duration-300">
+                                Privacy
+                            </Link>
+                            <Link to="/cookies" className="text-white/80 hover:text-white text-sm transition-colors duration-300">
+                                Cookies
+                            </Link>
+                            <Link to="/disclaimer" className="text-white/80 hover:text-white text-sm transition-colors duration-300">
+                                Disclaimer
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
