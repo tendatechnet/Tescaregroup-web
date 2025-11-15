@@ -4,6 +4,10 @@ import SEO from '../components/common/SEO';
 import { motion } from 'framer-motion';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
+<<<<<<< HEAD
+=======
+import { ContactStrip } from '../components/common/ContactStrip';
+>>>>>>> 4623683 (Some Changes)
 import { ClipboardCheck } from 'lucide-react';
 
 const services = [

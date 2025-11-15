@@ -4,6 +4,17 @@ import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { ChatBot } from './components/common/ChatBot';
 import SEO from './components/common/SEO';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Services } from './pages/Services';
+import { Contact } from './pages/Contact';
+import { RequestStaff } from './pages/RequestStaff';
+import { Login } from './pages/Login';
+import { Admin } from './pages/Admin';
+import { Terms } from './pages/Terms';
+import { Privacy } from './pages/Privacy';
+import { Cookies } from './pages/Cookies';
+import { Disclaimer } from './pages/Disclaimer';
 import AuthGuard from './components/common/AuthGuard';
 
 // Lazy load pages for better performance
@@ -47,7 +58,8 @@ function App() {
                   <Route path="/cookies" element={<Cookies />} />
                   <Route path="/disclaimer" element={<Disclaimer />} />
                   <Route path="/apply" element={<Apply />} />
-                  <Route
+                  <Route path="/apply" element={<Apply />} />
+            <Route
                     path="/admin"
                     element={
                       <AuthGuard>
