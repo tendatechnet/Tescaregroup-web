@@ -15,6 +15,7 @@ import { Terms } from './pages/Terms';
 import { Privacy } from './pages/Privacy';
 import { Cookies } from './pages/Cookies';
 import { Disclaimer } from './pages/Disclaimer';
+import { Apply } from './pages/Apply';
 import AuthGuard from './components/common/AuthGuard';
 
 // Lazy load pages for better performance
