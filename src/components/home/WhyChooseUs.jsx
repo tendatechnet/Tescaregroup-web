@@ -55,10 +55,10 @@ export const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
-            TES Care Group delivers fast, reliable, and compliant staffing solutions tailored to the needs of aged-care providers across Australia.
+            Why Choose TES Care Group?
           </h2>
           <p className="text-center text-white/90 text-lg mb-16 max-w-2xl mx-auto font-medium">
-            Dedicated to excellence in aged-care staffing across Australia
+            TES Care Group delivers fast, reliable, and compliant staffing solutions tailored to the needs of aged-care providers across Australia.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

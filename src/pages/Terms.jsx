@@ -29,11 +29,10 @@ const TableOfContents = ({ sections, activeSection, onSectionClick }) => {
                   onSectionClick(index);
                   setIsOpen(false);
                 }}
-                className={`block py-2 px-3 rounded-lg text-sm transition-colors ${
-                  activeSection === index
+                className={`block py-2 px-3 rounded-lg text-sm transition-colors ${activeSection === index
                     ? 'bg-powder-blue text-royal-blue font-medium'
                     : 'text-gray-600 hover:bg-powder-blue/50 hover:text-royal-blue'
-                }`}
+                  }`}
               >
                 {section.title}
               </a>
@@ -116,23 +115,23 @@ export const Terms = () => {
               {/* Main Content */}
               <div className="lg:col-span-3">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 lg:p-12 space-y-12">
-                  
+
                   <section id="section-1" className="scroll-mt-24">
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">1. Agreement to Terms</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        By accessing, browsing, or using the TES Care Group website, mobile application, or any of our services 
-                        (collectively, the "Services"), you acknowledge that you have read, understood, and agree to be bound by 
+                        By accessing, browsing, or using the TES Care Group website, mobile application, or any of our services
+                        (collectively, the "Services"), you acknowledge that you have read, understood, and agree to be bound by
                         these Terms and Conditions ("Terms") and our Privacy Policy.
                       </p>
                       <p>
-                        If you do not agree with any part of these Terms, you must not access or use our Services. These Terms 
-                        constitute a legally binding agreement between you ("Client", "you", or "your") and TES Care Group 
+                        If you do not agree with any part of these Terms, you must not access or use our Services. These Terms
+                        constitute a legally binding agreement between you ("Client", "you", or "your") and TES Care Group
                         ("we", "us", or "our").
                       </p>
                       <p>
-                        By submitting a staffing request, creating an account, or using any of our Services, you represent and 
-                        warrant that you have the legal capacity and authority to enter into this agreement on behalf of yourself 
+                        By submitting a staffing request, creating an account, or using any of our Services, you represent and
+                        warrant that you have the legal capacity and authority to enter into this agreement on behalf of yourself
                         or your organization.
                       </p>
                     </div>
@@ -144,29 +143,29 @@ export const Terms = () => {
                       <div>
                         <p className="font-semibold text-royal-blue mb-2">2.1. "Services"</p>
                         <p>
-                          Refers to all healthcare staffing services provided by TES Care Group, including but not limited to 
-                          temporary staffing, contract staffing, emergency call-outs, specialized care roles, and related 
+                          Refers to all healthcare staffing services provided by TES Care Group, including but not limited to
+                          temporary staffing, contract staffing, emergency call-outs, specialized care roles, and related
                           administrative and support services.
                         </p>
                       </div>
                       <div>
                         <p className="font-semibold text-royal-blue mb-2">2.2. "Staff" or "Healthcare Professional"</p>
                         <p>
-                          Refers to qualified healthcare workers provided by TES Care Group, including registered nurses, enrolled 
+                          Refers to qualified healthcare workers provided by TES Care Group, including registered nurses, enrolled
                           nurses, personal care assistants, support workers, and other healthcare professionals.
                         </p>
                       </div>
                       <div>
                         <p className="font-semibold text-royal-blue mb-2">2.3. "Client" or "Facility"</p>
                         <p>
-                          Refers to the aged-care facility, healthcare organization, disability service provider, or other entity 
+                          Refers to the aged-care facility, healthcare organization, disability service provider, or other entity
                           that engages TES Care Group's services.
                         </p>
                       </div>
                       <div>
                         <p className="font-semibold text-royal-blue mb-2">2.4. "Service Agreement"</p>
                         <p>
-                          Refers to the specific written agreement between TES Care Group and the Client detailing the terms, 
+                          Refers to the specific written agreement between TES Care Group and the Client detailing the terms,
                           conditions, and scope of services for a particular engagement.
                         </p>
                       </div>
@@ -182,28 +181,28 @@ export const Terms = () => {
                           TES Care Group provides comprehensive healthcare staffing solutions across Australia, including:
                         </p>
                         <ul className="list-disc list-inside space-y-2 ml-4">
-                          <li><strong>Temporary Staffing:</strong> Short-term staffing solutions to cover roster gaps, sick leave, 
-                          holidays, and unexpected absences with same-day placement available.</li>
-                          <li><strong>Contract Staffing:</strong> Medium to long-term care professionals available on contract to 
-                          support your facility's ongoing operational needs.</li>
-                          <li><strong>Emergency Call-Outs:</strong> 24/7 rapid-response emergency staffing service for last-minute 
-                          and urgent care needs in high-demand situations.</li>
-                          <li><strong>Specialized Care Roles:</strong> Access to registered nurses, enrolled nurses, AINs, support 
-                          workers, and other specialized healthcare professionals with specific qualifications and certifications.</li>
+                          <li><strong>Temporary Staffing:</strong> Short-term staffing solutions to cover roster gaps, sick leave,
+                            holidays, and unexpected absences with same-day placement available.</li>
+                          <li><strong>Contract Staffing:</strong> Medium to long-term care professionals available on contract to
+                            support your facility's ongoing operational needs.</li>
+                          <li><strong>Emergency Call-Outs:</strong> 24/7 rapid-response emergency staffing service for last-minute
+                            and urgent care needs in high-demand situations.</li>
+                          <li><strong>Specialized Care Roles:</strong> Access to registered nurses, enrolled nurses, AINs, support
+                            workers, and other specialized healthcare professionals with specific qualifications and certifications.</li>
                         </ul>
                       </div>
                       <div>
                         <p className="font-semibold text-royal-blue mb-3">3.2. Service Areas</p>
                         <p>
-                          Our services are available across New South Wales (NSW), Victoria (VIC), Queensland (QLD), Western 
+                          Our services are available across New South Wales (NSW), Victoria (VIC), Queensland (QLD), Western
                           Australia (WA), and South Australia (SA), including metropolitan, regional, and rural areas.
                         </p>
                       </div>
                       <div>
                         <p className="font-semibold text-royal-blue mb-3">3.3. Service Availability</p>
                         <p>
-                          While we strive to provide 24/7 staffing support, availability may vary based on demand, location, 
-                          staff qualifications required, and other factors. We cannot guarantee immediate availability in all 
+                          While we strive to provide 24/7 staffing support, availability may vary based on demand, location,
+                          staff qualifications required, and other factors. We cannot guarantee immediate availability in all
                           circumstances but will make every reasonable effort to meet your staffing needs.
                         </p>
                       </div>
@@ -215,7 +214,7 @@ export const Terms = () => {
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p className="font-semibold text-royal-blue mb-3">4.1. Accurate Information</p>
                       <p className="mb-4">
-                        You agree to provide accurate, complete, and current information when requesting staff, including but 
+                        You agree to provide accurate, complete, and current information when requesting staff, including but
                         not limited to:
                       </p>
                       <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
@@ -226,7 +225,7 @@ export const Terms = () => {
                         <li>Any special requirements, policies, or procedures</li>
                         <li>Emergency contact information</li>
                       </ul>
-                      
+
                       <p className="font-semibold text-royal-blue mb-3">4.2. Workplace Safety</p>
                       <p className="mb-4">
                         You are responsible for ensuring a safe working environment for our staff, including:
@@ -241,7 +240,7 @@ export const Terms = () => {
 
                       <p className="font-semibold text-royal-blue mb-3">4.3. Professional Conduct</p>
                       <p>
-                        You agree to treat all TES Care Group staff with respect and professionalism. Any concerns regarding staff 
+                        You agree to treat all TES Care Group staff with respect and professionalism. Any concerns regarding staff
                         performance or conduct should be reported to TES Care Group immediately through our designated channels.
                       </p>
                     </div>
@@ -251,7 +250,7 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">5. Staff Qualifications and Vetting</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p className="mb-4">
-                        TES Care Group is committed to providing qualified, professional healthcare staff. All staff provided 
+                        TES Care Group is committed to providing qualified, professional healthcare staff. All staff provided
                         through our Services undergo comprehensive vetting processes, including:
                       </p>
                       <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
@@ -263,8 +262,8 @@ export const Terms = () => {
                         <li>Ongoing compliance monitoring and professional development</li>
                       </ul>
                       <p>
-                        While we take all reasonable steps to ensure staff qualifications and suitability, the ultimate responsibility 
-                        for patient care and facility operations remains with the Client. Clients should conduct their own verification 
+                        While we take all reasonable steps to ensure staff qualifications and suitability, the ultimate responsibility
+                        for patient care and facility operations remains with the Client. Clients should conduct their own verification
                         and orientation processes as appropriate for their facility.
                       </p>
                     </div>
@@ -295,7 +294,7 @@ export const Terms = () => {
                         <li>As specified in your Service Agreement</li>
                       </ul>
                       <p className="mb-4">
-                        Payment terms are typically net 14 or net 30 days from invoice date, as agreed in your Service Agreement. 
+                        Payment terms are typically net 14 or net 30 days from invoice date, as agreed in your Service Agreement.
                         Payment must be made via the methods specified in the invoice.
                       </p>
 
@@ -312,8 +311,8 @@ export const Terms = () => {
 
                       <p className="font-semibold text-royal-blue mb-3">6.4. Disputed Invoices</p>
                       <p>
-                        If you dispute any invoice, you must notify us in writing within 7 days of the invoice date, specifying 
-                        the nature of the dispute. We will work with you to resolve the dispute promptly. Undisputed portions of 
+                        If you dispute any invoice, you must notify us in writing within 7 days of the invoice date, specifying
+                        the nature of the dispute. We will work with you to resolve the dispute promptly. Undisputed portions of
                         invoices must still be paid by the due date.
                       </p>
                     </div>
@@ -368,8 +367,8 @@ export const Terms = () => {
 
                       <p className="font-semibold text-royal-blue mb-3">7.3. Refunds</p>
                       <p>
-                        Refunds may be provided at our discretion in cases where services were not delivered as agreed due to 
-                        circumstances within our control. Refund requests must be submitted in writing within 30 days of the 
+                        Refunds may be provided at our discretion in cases where services were not delivered as agreed due to
+                        circumstances within our control. Refund requests must be submitted in writing within 30 days of the
                         service date.
                       </p>
                     </div>
@@ -379,13 +378,13 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">8. Intellectual Property</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        All content, materials, logos, trademarks, and intellectual property on the TES Care Group website and 
-                        in our Services are owned by or licensed to TES Care Group and are protected by Australian and international 
+                        All content, materials, logos, trademarks, and intellectual property on the TES Care Group website and
+                        in our Services are owned by or licensed to TES Care Group and are protected by Australian and international
                         copyright and trademark laws.
                       </p>
                       <p>
-                        You may not reproduce, distribute, modify, create derivative works of, publicly display, or use our 
-                        intellectual property without our prior written consent. This includes but is not limited to our website 
+                        You may not reproduce, distribute, modify, create derivative works of, publicly display, or use our
+                        intellectual property without our prior written consent. This includes but is not limited to our website
                         content, service descriptions, and marketing materials.
                       </p>
                     </div>
@@ -396,14 +395,14 @@ export const Terms = () => {
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p className="font-semibold text-royal-blue mb-3">9.1. General Limitation</p>
                       <p className="mb-4">
-                        To the maximum extent permitted by law, TES Care Group's total liability for any claims arising from or 
-                        related to our Services, whether in contract, tort (including negligence), or otherwise, shall not exceed 
+                        To the maximum extent permitted by law, TES Care Group's total liability for any claims arising from or
+                        related to our Services, whether in contract, tort (including negligence), or otherwise, shall not exceed
                         the total fees paid by the Client to TES Care Group in the 12 months preceding the claim.
                       </p>
 
                       <p className="font-semibold text-royal-blue mb-3">9.2. Excluded Damages</p>
                       <p className="mb-4">
-                        TES Care Group shall not be liable for any indirect, consequential, incidental, special, or punitive 
+                        TES Care Group shall not be liable for any indirect, consequential, incidental, special, or punitive
                         damages, including but not limited to:
                       </p>
                       <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
@@ -416,8 +415,8 @@ export const Terms = () => {
 
                       <p className="font-semibold text-royal-blue mb-3">9.3. Australian Consumer Law</p>
                       <p>
-                        Nothing in these Terms excludes, restricts, or modifies any rights you may have under the Australian 
-                        Consumer Law (ACL) or any other applicable consumer protection legislation. Where the ACL applies, our 
+                        Nothing in these Terms excludes, restricts, or modifies any rights you may have under the Australian
+                        Consumer Law (ACL) or any other applicable consumer protection legislation. Where the ACL applies, our
                         liability is limited to the maximum extent permitted by law.
                       </p>
                     </div>
@@ -427,8 +426,8 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">10. Indemnification</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        You agree to indemnify, defend, and hold harmless TES Care Group, its officers, directors, employees, 
-                        agents, and affiliates from and against any and all claims, damages, losses, liabilities, costs, and 
+                        You agree to indemnify, defend, and hold harmless TES Care Group, its officers, directors, employees,
+                        agents, and affiliates from and against any and all claims, damages, losses, liabilities, costs, and
                         expenses (including reasonable legal fees) arising from or related to:
                       </p>
                       <ul className="list-disc list-inside space-y-2 ml-4">
@@ -445,7 +444,7 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">11. Confidentiality</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        Both parties agree to maintain the confidentiality of all proprietary, confidential, or sensitive information 
+                        Both parties agree to maintain the confidentiality of all proprietary, confidential, or sensitive information
                         disclosed during the course of our business relationship. This includes but is not limited to:
                       </p>
                       <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
@@ -455,7 +454,7 @@ export const Terms = () => {
                         <li>Pricing and commercial terms</li>
                       </ul>
                       <p>
-                        Confidentiality obligations survive termination of these Terms and any Service Agreement. Information may 
+                        Confidentiality obligations survive termination of these Terms and any Service Agreement. Information may
                         only be disclosed with written consent or as required by law.
                       </p>
                     </div>
@@ -466,21 +465,21 @@ export const Terms = () => {
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p className="font-semibold text-royal-blue mb-3">12.1. Good Faith Negotiation</p>
                       <p className="mb-4">
-                        In the event of any dispute, controversy, or claim arising out of or relating to these Terms or our 
+                        In the event of any dispute, controversy, or claim arising out of or relating to these Terms or our
                         Services, the parties agree to first attempt to resolve the matter through good faith negotiation.
                       </p>
 
                       <p className="font-semibold text-royal-blue mb-3">12.2. Mediation</p>
                       <p className="mb-4">
-                        If negotiation fails, the parties agree to submit the dispute to mediation in accordance with the 
-                        Australian Commercial Disputes Centre (ACDC) Mediation Rules or similar mediation service. Mediation 
+                        If negotiation fails, the parties agree to submit the dispute to mediation in accordance with the
+                        Australian Commercial Disputes Centre (ACDC) Mediation Rules or similar mediation service. Mediation
                         costs will be shared equally unless otherwise agreed.
                       </p>
 
                       <p className="font-semibold text-royal-blue mb-3">12.3. Legal Proceedings</p>
                       <p>
-                        If mediation is unsuccessful, either party may commence legal proceedings. The parties agree that the 
-                        courts of Australia shall have exclusive jurisdiction over any disputes, and these Terms shall be 
+                        If mediation is unsuccessful, either party may commence legal proceedings. The parties agree that the
+                        courts of Australia shall have exclusive jurisdiction over any disputes, and these Terms shall be
                         governed by the laws of Australia.
                       </p>
                     </div>
@@ -490,13 +489,13 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">13. Modifications to Terms</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        TES Care Group reserves the right to modify, update, or change these Terms at any time. Material changes 
-                        will be communicated to Clients via email or through our website. Continued use of our Services after 
+                        TES Care Group reserves the right to modify, update, or change these Terms at any time. Material changes
+                        will be communicated to Clients via email or through our website. Continued use of our Services after
                         such modifications constitutes acceptance of the updated Terms.
                       </p>
                       <p>
-                        If you do not agree with any modifications, you must discontinue use of our Services and notify us in 
-                        writing. Your existing Service Agreements will continue to be governed by the Terms in effect at the 
+                        If you do not agree with any modifications, you must discontinue use of our Services and notify us in
+                        writing. Your existing Service Agreements will continue to be governed by the Terms in effect at the
                         time the agreement was entered into, unless both parties agree otherwise.
                       </p>
                     </div>
@@ -506,11 +505,11 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">14. Governing Law</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        These Terms are governed by and construed in accordance with the laws of Australia. Any disputes arising 
+                        These Terms are governed by and construed in accordance with the laws of Australia. Any disputes arising
                         from these Terms or our Services shall be subject to the exclusive jurisdiction of the courts of Australia.
                       </p>
                       <p>
-                        If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions 
+                        If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions
                         shall continue in full force and effect.
                       </p>
                     </div>
@@ -520,7 +519,7 @@ export const Terms = () => {
                     <h2 className="text-3xl font-heading font-bold text-royal-blue mb-6">15. Contact Information</h2>
                     <div className="space-y-4 text-gray-700 leading-relaxed">
                       <p>
-                        If you have any questions, concerns, or require clarification regarding these Terms & Conditions, please 
+                        If you have any questions, concerns, or require clarification regarding these Terms & Conditions, please
                         contact us:
                       </p>
                       <div className="bg-powder-blue/30 rounded-xl p-6 mt-6">
