@@ -15,7 +15,7 @@ export const Hero = () => {
           loading="eager"
         />
         {/* Gradient Overlay for better text readability */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(to right, rgba(22, 38, 96, 0.95), rgba(22, 38, 96, 0.85), rgba(22, 38, 96, 0.60))'
@@ -53,10 +53,10 @@ export const Hero = () => {
             <Button to="/request-staff" variant="secondary" size="lg" className="text-lg px-8 py-4">
               Request Staff Now
             </Button>
-            <Button 
-              to="/services" 
-              variant="outline" 
-              size="lg" 
+            <Button
+              to="/services"
+              variant="outline"
+              size="lg"
               className="!border-white !text-white hover:!bg-white hover:!text-royal-blue text-lg px-8 py-4"
             >
               Our Services
@@ -66,8 +66,8 @@ export const Hero = () => {
       </div>
 
       {/* Decorative bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-12 md:h-20">
+      <div className="absolute bottom-0 left-0 right-0 z-10 w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-12 md:h-20" style={{ minWidth: '100%' }}>
           <path fill="#ffffff" fillOpacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
         </svg>
       </div>

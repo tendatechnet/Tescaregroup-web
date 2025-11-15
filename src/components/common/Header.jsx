@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 
 const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Request Staff', path: '/request-staff' },
+    { name: 'Apply', path: '/apply' },
     { name: 'Contact', path: '/contact' }
 ];
 
