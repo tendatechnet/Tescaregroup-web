@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
+import { ChatBot } from './components/common/ChatBot';
 import SEO from './components/common/SEO';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -9,6 +10,10 @@ import { Contact } from './pages/Contact';
 import { RequestStaff } from './pages/RequestStaff';
 import { Login } from './pages/Login';
 import { Admin } from './pages/Admin';
+import { Terms } from './pages/Terms';
+import { Privacy } from './pages/Privacy';
+import { Cookies } from './pages/Cookies';
+import { Disclaimer } from './pages/Disclaimer';
 import AuthGuard from './components/common/AuthGuard';
 
 function App() {
@@ -25,6 +30,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/request-staff" element={<RequestStaff />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
             <Route
               path="/admin"
               element={
@@ -36,6 +45,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ChatBot />
       </div>
     </Router>
   );
