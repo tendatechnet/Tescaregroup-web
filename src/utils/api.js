@@ -1,76 +1,61 @@
 /**
  * API Service Utilities
  * 
- * Ready for integration with:
- * - Google Sheets API
- * - Email services (SendGrid, Mailgun, etc.)
- * - Backend APIs
- * - Webhooks
+ * EmailJS integration for sending emails from contact and staff request forms.
  * 
- * To integrate, simply update the API endpoints and add your keys to .env
+ * To set up EmailJS:
+ * 1. Sign up at https://www.emailjs.com/
+ * 2. Add an email service and create email templates
+ * 3. Add your keys to .env file
+ * 
+ * See README.md for detailed setup instructions.
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
-const GOOGLE_SHEETS_WEBHOOK = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK || '';
-const CONTACT_EMAIL_API = import.meta.env.VITE_CONTACT_EMAIL_API || '';
-const STAFF_REQUEST_API = import.meta.env.VITE_STAFF_REQUEST_API || '';
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_STAFF_REQUEST_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_STAFF_REQUEST_TEMPLATE_ID || '';
+
+// Initialize EmailJS
+if (EMAILJS_PUBLIC_KEY) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
 
 /**
- * Submit contact form data
- * @param {Object} formData - Contact form data
- * @returns {Promise<Object>} Response from API
+ * Submit contact form data via EmailJS
+ * @param {Object} formData - Contact form data { name, email, message }
+ * @returns {Promise<Object>} Response from EmailJS
  */
 export const submitContactForm = async (formData) => {
   try {
-    // Option 1: Google Sheets Webhook
-    if (GOOGLE_SHEETS_WEBHOOK) {
-      const response = await fetch(GOOGLE_SHEETS_WEBHOOK, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'contact',
-          timestamp: new Date().toISOString(),
-          ...formData,
-        }),
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit contact form');
-      return await response.json();
+    // Validate EmailJS configuration
+    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+      throw new Error('EmailJS is not configured. Please add your EmailJS credentials to .env file.');
     }
 
-    // Option 2: Custom API endpoint
-    if (CONTACT_EMAIL_API) {
-      const response = await fetch(CONTACT_EMAIL_API, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit contact form');
-      return await response.json();
-    }
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+      to_email: 'tescaregroup@tescaregroup.com.au', // Recipient email
+      reply_to: formData.email,
+      subject: `New Contact Form Submission from ${formData.name}`,
+    };
 
-    // Option 3: Generic API endpoint
-    if (API_BASE_URL) {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit contact form');
-      return await response.json();
-    }
+    const response = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      templateParams
+    );
 
-    // Fallback: Log to console (for development)
-    console.log('Contact form submission (no API configured):', formData);
-    return { success: true, message: 'Form submitted (development mode)' };
+    if (response.status === 200) {
+      return { success: true, message: 'Message sent successfully!', response };
+    } else {
+      throw new Error('Failed to send email via EmailJS');
+    }
   } catch (error) {
     console.error('Error submitting contact form:', error);
     throw error;
@@ -78,114 +63,53 @@ export const submitContactForm = async (formData) => {
 };
 
 /**
- * Submit staff request form data
+ * Submit staff request form data via EmailJS
  * @param {Object} formData - Staff request form data
- * @param {File|null} file - Optional attached file
- * @returns {Promise<Object>} Response from API
+ * @param {File|null} file - Optional attached file (Note: EmailJS free tier doesn't support file attachments)
+ * @returns {Promise<Object>} Response from EmailJS
  */
 export const submitStaffRequest = async (formData, file = null) => {
   try {
-    // Prepare form data
-    const submissionData = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-      fileAttached: !!file,
-      fileName: file?.name || null,
+    // Validate EmailJS configuration
+    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_STAFF_REQUEST_TEMPLATE_ID) {
+      throw new Error('EmailJS is not configured. Please add your EmailJS credentials to .env file.');
+    }
+
+    const templateParams = {
+      facility_name: formData.facilityName,
+      contact_person: formData.contactPerson,
+      phone: formData.phone,
+      email: formData.email,
+      staff_type: formData.staffType,
+      number_of_staff: formData.numberOfStaff,
+      shift_start_date: formData.shiftStartDate,
+      shift_start_time: formData.shiftStartTime,
+      shift_end_date: formData.shiftEndDate,
+      shift_end_time: formData.shiftEndTime,
+      additional_notes: formData.additionalNotes || 'None',
+      file_attached: file ? `Yes - ${file.name} (${(file.size / 1024).toFixed(2)} KB)` : 'No',
+      to_email: 'tescaregroup@tescaregroup.com.au', // Recipient email
+      reply_to: formData.email,
+      subject: `New Staff Request from ${formData.facilityName}`,
     };
 
-    // Option 1: Google Sheets Webhook (with file handling)
-    if (GOOGLE_SHEETS_WEBHOOK) {
-      // For Google Sheets, we'll send file as base64 if small enough
-      let fileData = null;
-      if (file && file.size < 5 * 1024 * 1024) { // 5MB limit
-        fileData = await fileToBase64(file);
-      }
+    const response = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_STAFF_REQUEST_TEMPLATE_ID,
+      templateParams
+    );
 
-      const response = await fetch(GOOGLE_SHEETS_WEBHOOK, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'staff_request',
-          ...submissionData,
-          fileData,
-        }),
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit staff request');
-      return await response.json();
+    if (response.status === 200) {
+      // Note: EmailJS free tier doesn't support file attachments directly
+      // File information is included in the email template
+      return { success: true, message: 'Staff request submitted successfully!', response };
+    } else {
+      throw new Error('Failed to send staff request via EmailJS');
     }
-
-    // Option 2: FormData for file uploads
-    if (STAFF_REQUEST_API) {
-      const formDataToSend = new FormData();
-      
-      // Add all form fields
-      Object.keys(formData).forEach(key => {
-        if (formData[key] !== null && formData[key] !== '') {
-          formDataToSend.append(key, formData[key]);
-        }
-      });
-      
-      // Add file if present
-      if (file) {
-        formDataToSend.append('file', file);
-      }
-
-      const response = await fetch(STAFF_REQUEST_API, {
-        method: 'POST',
-        body: formDataToSend,
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit staff request');
-      return await response.json();
-    }
-
-    // Option 3: Generic API endpoint
-    if (API_BASE_URL) {
-      const formDataToSend = new FormData();
-      
-      Object.keys(formData).forEach(key => {
-        if (formData[key] !== null && formData[key] !== '') {
-          formDataToSend.append(key, formData[key]);
-        }
-      });
-      
-      if (file) {
-        formDataToSend.append('file', file);
-      }
-
-      const response = await fetch(`${API_BASE_URL}/api/staff-request`, {
-        method: 'POST',
-        body: formDataToSend,
-      });
-      
-      if (!response.ok) throw new Error('Failed to submit staff request');
-      return await response.json();
-    }
-
-    // Fallback: Log to console (for development)
-    console.log('Staff request submission (no API configured):', submissionData);
-    return { success: true, message: 'Request submitted (development mode)' };
   } catch (error) {
     console.error('Error submitting staff request:', error);
     throw error;
   }
-};
-
-/**
- * Convert file to base64 string
- * @param {File} file - File to convert
- * @returns {Promise<string>} Base64 string
- */
-const fileToBase64 = (file) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = (error) => reject(error);
-  });
 };
 
 /**
@@ -205,7 +129,7 @@ export const validateEmail = (email) => {
  */
 export const validatePhone = (phone) => {
   // Remove spaces, dashes, and parentheses
-  const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+  const cleaned = phone.replace(/[\s\-()]/g, '');
   // Check for Australian phone format (+61 or 0 followed by 9 digits)
   const phoneRegex = /^(\+61|0)[2-9]\d{8}$/;
   return phoneRegex.test(cleaned);
@@ -217,7 +141,7 @@ export const validatePhone = (phone) => {
  * @returns {string} Formatted phone number
  */
 export const formatPhone = (phone) => {
-  const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+  const cleaned = phone.replace(/[\s\-()]/g, '');
   if (cleaned.startsWith('+61')) {
     return cleaned.replace(/(\+61)(\d{1})(\d{4})(\d{4})/, '+61 $2 $3 $4');
   }
