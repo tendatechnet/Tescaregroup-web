@@ -155,7 +155,7 @@ export const About = () => {
 
                                 {/* Content on Right */}
                                 <div>
-                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Mission
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -200,7 +200,7 @@ export const About = () => {
                             >
                                 {/* Content on Left */}
                                 <div className="lg:order-1">
-                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Vision
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -251,7 +251,7 @@ export const About = () => {
                 {/* Core Values */}
 
                 <Principles />
-               
+
 
                 {/* Service Area with Image */}
                 <section className="py-20 bg-white">
@@ -290,18 +290,18 @@ export const About = () => {
                                 {/* Content on Right */}
                                 <div>
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
-                                    Where We Operate
+                                        Where We Operate
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                                    TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
+                                        TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
 
 
                                     </p>
-                                    
+
                                 </div>
                             </motion.div>
 
-                          
+
                         </div>
                     </div>
                 </section>
