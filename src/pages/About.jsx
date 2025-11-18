@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/common/Card';
 import { ContactStrip } from '../components/common/ContactStrip';
 import { Heart, Users, Award, MapPin } from 'lucide-react';
+import { Principles } from '../components/home/Princepal';
 
 const values = [
     {
@@ -248,57 +249,9 @@ export const About = () => {
                 </section>
 
                 {/* Core Values */}
-                <section className="py-20 relative overflow-hidden">
-                    {/* Modern background pattern */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-navy-light"></div>
-                    <div className="absolute inset-0 opacity-5">
-                        <div className="absolute inset-0" style={{
-                            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                            backgroundSize: '50px 50px'
-                        }}></div>
-                    </div>
 
-                    <div className="container mx-auto px-4 relative z-10">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white text-center mb-4">
-                                Our Core Values
-                            </h2>
-                            <p className="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">
-                                The principles behind our commitment to quality aged-care
-                            </p>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                {values.map((value, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                                        className="relative group"
-                                    >
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 h-full border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:-translate-y-2">
-                                            <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${value.gradient} text-white mb-6 shadow-lg`}>
-                                                <value.icon size={32} />
-                                            </div>
-                                            <h3 className="text-xl font-heading font-semibold text-white mb-3">
-                                                {value.title}
-                                            </h3>
-                                            <p className="text-gray-300 leading-relaxed">
-                                                {value.description}
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <Principles />
+               
 
                 {/* Service Area with Image */}
                 <section className="py-20 relative overflow-hidden">
