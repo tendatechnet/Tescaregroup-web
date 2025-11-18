@@ -1,49 +1,49 @@
-import emailjs from '@emailjs/browser';
+/**
+ * API Service Utilities
+ * 
+ * Supabase integration for form submissions and file storage.
+ * 
+ * All form data is stored in Supabase database and files are stored in Supabase Storage.
+ * 
+ * To set up Supabase:
+ * 1. Create a project at https://supabase.com
+ * 2. Run the SQL schema from SUPABASE_MIGRATION.md
+ * 3. Create storage buckets
+ * 4. Add your credentials to .env file
+ */
 
-// EmailJS Configuration
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
-const EMAILJS_STAFF_REQUEST_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_STAFF_REQUEST_TEMPLATE_ID || '';
-const EMAILJS_JOB_APPLICATION_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID || '';
-
-// Initialize EmailJS
-if (EMAILJS_PUBLIC_KEY) {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-}
+import { supabase, uploadFile } from './supabase';
 
 /**
- * Submit contact form data via EmailJS
+ * Submit contact form data to Supabase
  * @param {Object} formData - Contact form data { name, email, message }
- * @returns {Promise<Object>} Response from EmailJS
+ * @returns {Promise<Object>} Response from Supabase
  */
 export const submitContactForm = async (formData) => {
   try {
-    // Validate EmailJS configuration
-    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
-      throw new Error('EmailJS is not configured. Please add your EmailJS credentials to .env file.');
+    const { data, error } = await supabase
+      .from('contact_submissions')
+      .insert([
+        {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          status: 'new',
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      throw new Error(`Failed to submit contact form: ${error.message}`);
     }
 
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-      to_email: 'tescaregroup@tescaregroup.com.au', // Recipient email
-      reply_to: formData.email,
-      subject: `New Contact Form Submission from ${formData.name}`,
+    return { 
+      success: true, 
+      message: 'Message sent successfully!', 
+      data,
+      id: data.id 
     };
-
-    const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      templateParams
-    );
-
-    if (response.status === 200) {
-      return { success: true, message: 'Message sent successfully!', response };
-    } else {
-      throw new Error('Failed to send email via EmailJS');
-    }
   } catch (error) {
     console.error('Error submitting contact form:', error);
     throw error;
@@ -51,49 +51,61 @@ export const submitContactForm = async (formData) => {
 };
 
 /**
- * Submit staff request form data via EmailJS
+ * Submit staff request form data to Supabase
  * @param {Object} formData - Staff request form data
- * @param {File|null} file - Optional attached file (Note: EmailJS free tier doesn't support file attachments)
- * @returns {Promise<Object>} Response from EmailJS
+ * @param {File|null} file - Optional attached file
+ * @returns {Promise<Object>} Response from Supabase
  */
 export const submitStaffRequest = async (formData, file = null) => {
   try {
-    // Validate EmailJS configuration
-    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_STAFF_REQUEST_TEMPLATE_ID) {
-      throw new Error('EmailJS is not configured. Please add your EmailJS credentials to .env file.');
+    let fileUrl = null;
+    let fileName = null;
+
+    // Upload file if provided
+    if (file) {
+      try {
+        const uploadResult = await uploadFile(file, 'staff-request-files', 'attachments');
+        fileUrl = uploadResult.url;
+        fileName = uploadResult.name;
+      } catch (uploadError) {
+        console.error('File upload error:', uploadError);
+        // Continue with submission even if file upload fails
+      }
     }
 
-    const templateParams = {
-      facility_name: formData.facilityName,
-      contact_person: formData.contactPerson,
-      phone: formData.phone,
-      email: formData.email,
-      staff_type: formData.staffType,
-      number_of_staff: formData.numberOfStaff,
-      shift_start_date: formData.shiftStartDate,
-      shift_start_time: formData.shiftStartTime,
-      shift_end_date: formData.shiftEndDate,
-      shift_end_time: formData.shiftEndTime,
-      additional_notes: formData.additionalNotes || 'None',
-      file_attached: file ? `Yes - ${file.name} (${(file.size / 1024).toFixed(2)} KB)` : 'No',
-      to_email: 'tescaregroup@tescaregroup.com.au', // Recipient email
-      reply_to: formData.email,
-      subject: `New Staff Request from ${formData.facilityName}`,
+    const { data, error } = await supabase
+      .from('staff_requests')
+      .insert([
+        {
+          facility_name: formData.facilityName.trim(),
+          contact_person: formData.contactPerson.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          staff_type: formData.staffType,
+          number_of_staff: parseInt(formData.numberOfStaff) || 1,
+          shift_start_date: formData.shiftStartDate || null,
+          shift_start_time: formData.shiftStartTime || null,
+          shift_end_date: formData.shiftEndDate || null,
+          shift_end_time: formData.shiftEndTime || null,
+          additional_notes: formData.additionalNotes?.trim() || null,
+          file_url: fileUrl,
+          file_name: fileName,
+          status: 'pending',
+        },
+      ])
+      .select()
+      .single();
+
+    if (error) {
+      throw new Error(`Failed to submit staff request: ${error.message}`);
+    }
+
+    return { 
+      success: true, 
+      message: 'Staff request submitted successfully!', 
+      data,
+      id: data.id 
     };
-
-    const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_STAFF_REQUEST_TEMPLATE_ID,
-      templateParams
-    );
-
-    if (response.status === 200) {
-      // Note: EmailJS free tier doesn't support file attachments directly
-      // File information is included in the email template
-      return { success: true, message: 'Staff request submitted successfully!', response };
-    } else {
-      throw new Error('Failed to send staff request via EmailJS');
-    }
   } catch (error) {
     console.error('Error submitting staff request:', error);
     throw error;
@@ -101,110 +113,132 @@ export const submitStaffRequest = async (formData, file = null) => {
 };
 
 /**
- * Submit job application form data via EmailJS
+ * Submit job application form data to Supabase
  * @param {Object} formData - Job application form data
  * @param {File|null} resume - Resume file
  * @param {File|null} coverLetter - Cover letter file
  * @param {File|null} certificationsFile - Certifications file
- * @returns {Promise<Object>} Response from EmailJS
+ * @returns {Promise<Object>} Response from Supabase
  */
 export const submitJobApplication = async (formData, resume = null, coverLetter = null, certificationsFile = null) => {
   try {
-    // Validate EmailJS configuration
-    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_JOB_APPLICATION_TEMPLATE_ID) {
-      throw new Error('EmailJS is not configured. Please add your EmailJS credentials to .env file.');
+    let resumeUrl = null;
+    let resumeName = null;
+    let coverLetterUrl = null;
+    let coverLetterName = null;
+    let certificationsFileUrl = null;
+    let certificationsFileName = null;
+
+    // Upload files if provided
+    const uploadPromises = [];
+
+    if (resume) {
+      uploadPromises.push(
+        uploadFile(resume, 'job-applications', 'resumes')
+          .then(result => {
+            resumeUrl = result.url;
+            resumeName = result.name;
+          })
+          .catch(error => {
+            console.error('Resume upload error:', error);
+            // Continue even if upload fails
+          })
+      );
     }
 
-    // Format employment history
-    const currentEmployment = formData.currentEmployer 
-      ? `Current/Most Recent:\nEmployer: ${formData.currentEmployer}\nPosition: ${formData.currentPosition || 'N/A'}\nStart Date: ${formData.employmentStartDate || 'N/A'}\nEnd Date: ${formData.employmentEndDate || 'Current'}\n`
-      : 'None provided';
+    if (coverLetter) {
+      uploadPromises.push(
+        uploadFile(coverLetter, 'job-applications', 'cover-letters')
+          .then(result => {
+            coverLetterUrl = result.url;
+            coverLetterName = result.name;
+          })
+          .catch(error => {
+            console.error('Cover letter upload error:', error);
+            // Continue even if upload fails
+          })
+      );
+    }
 
-    const previousEmployment = formData.previousEmployer
-      ? `Previous:\nEmployer: ${formData.previousEmployer}\nPosition: ${formData.previousPosition || 'N/A'}\nStart Date: ${formData.previousStartDate || 'N/A'}\nEnd Date: ${formData.previousEndDate || 'N/A'}\n`
-      : 'None provided';
+    if (certificationsFile) {
+      uploadPromises.push(
+        uploadFile(certificationsFile, 'job-applications', 'certifications')
+          .then(result => {
+            certificationsFileUrl = result.url;
+            certificationsFileName = result.name;
+          })
+          .catch(error => {
+            console.error('Certifications upload error:', error);
+            // Continue even if upload fails
+          })
+      );
+    }
 
-    // Format references
-    const reference1 = formData.ref1Name
-      ? `Reference 1:\nName: ${formData.ref1Name}\nPosition: ${formData.ref1Position || 'N/A'}\nPhone: ${formData.ref1Phone || 'N/A'}\nEmail: ${formData.ref1Email || 'N/A'}\n`
-      : 'Not provided';
+    // Wait for all uploads to complete (or fail)
+    await Promise.allSettled(uploadPromises);
 
-    const reference2 = formData.ref2Name
-      ? `Reference 2:\nName: ${formData.ref2Name}\nPosition: ${formData.ref2Position || 'N/A'}\nPhone: ${formData.ref2Phone || 'N/A'}\nEmail: ${formData.ref2Email || 'N/A'}\n`
-      : 'Not provided';
+    // Insert application data
+    const { data, error } = await supabase
+      .from('job_applications')
+      .insert([
+        {
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          address: formData.address?.trim() || null,
+          city: formData.city?.trim() || null,
+          state: formData.state || null,
+          postcode: formData.postcode?.trim() || null,
+          position_type: formData.positionType,
+          preferred_start_date: formData.preferredStartDate || null,
+          availability: formData.availability?.trim() || null,
+          current_employer: formData.currentEmployer?.trim() || null,
+          current_position: formData.currentPosition?.trim() || null,
+          employment_start_date: formData.employmentStartDate || null,
+          employment_end_date: formData.employmentEndDate || null,
+          previous_employer: formData.previousEmployer?.trim() || null,
+          previous_position: formData.previousPosition?.trim() || null,
+          previous_start_date: formData.previousStartDate || null,
+          previous_end_date: formData.previousEndDate || null,
+          responsibilities: formData.responsibilities?.trim() || null,
+          qualification: formData.qualification?.trim() || null,
+          institution: formData.institution?.trim() || null,
+          graduation_year: formData.graduationYear?.trim() || null,
+          additional_qualifications: formData.additionalQualifications?.trim() || null,
+          certifications: formData.certifications?.trim() || null,
+          license_number: formData.licenseNumber?.trim() || null,
+          expiry_date: formData.expiryDate || null,
+          ref1_name: formData.ref1Name?.trim() || null,
+          ref1_position: formData.ref1Position?.trim() || null,
+          ref1_phone: formData.ref1Phone?.trim() || null,
+          ref1_email: formData.ref1Email?.trim() || null,
+          ref2_name: formData.ref2Name?.trim() || null,
+          ref2_position: formData.ref2Position?.trim() || null,
+          ref2_phone: formData.ref2Phone?.trim() || null,
+          ref2_email: formData.ref2Email?.trim() || null,
+          resume_url: resumeUrl,
+          resume_name: resumeName,
+          cover_letter_url: coverLetterUrl,
+          cover_letter_name: coverLetterName,
+          certifications_file_url: certificationsFileUrl,
+          certifications_file_name: certificationsFileName,
+          status: 'pending',
+        },
+      ])
+      .select()
+      .single();
 
-    // Format file information
-    const filesInfo = [
-      resume ? `Resume: ${resume.name} (${(resume.size / 1024).toFixed(2)} KB)` : null,
-      coverLetter ? `Cover Letter: ${coverLetter.name} (${(coverLetter.size / 1024).toFixed(2)} KB)` : null,
-      certificationsFile ? `Certifications: ${certificationsFile.name} (${(certificationsFile.size / 1024).toFixed(2)} KB)` : null,
-    ].filter(Boolean).join('\n') || 'No files attached';
+    if (error) {
+      throw new Error(`Failed to submit job application: ${error.message}`);
+    }
 
-    const templateParams = {
-      // Personal Information
-      first_name: formData.firstName,
-      last_name: formData.lastName,
-      full_name: `${formData.firstName} ${formData.lastName}`,
-      email: formData.email,
-      phone: formData.phone,
-      address: formData.address || 'Not provided',
-      city: formData.city || 'Not provided',
-      state: formData.state || 'Not provided',
-      postcode: formData.postcode || 'Not provided',
-      full_address: formData.address 
-        ? `${formData.address}, ${formData.city || ''}, ${formData.state || ''} ${formData.postcode || ''}`.trim()
-        : 'Not provided',
-      
-      // Position Information
-      position_type: formData.positionType || 'Not specified',
-      preferred_start_date: formData.preferredStartDate || 'Not specified',
-      availability: formData.availability || 'Not specified',
-      
-      // Employment History
-      current_employment: currentEmployment,
-      previous_employment: previousEmployment,
-      responsibilities: formData.responsibilities || 'None provided',
-      
-      // Education
-      qualification: formData.qualification || 'Not provided',
-      institution: formData.institution || 'Not provided',
-      graduation_year: formData.graduationYear || 'Not provided',
-      additional_qualifications: formData.additionalQualifications || 'None',
-      
-      // Certifications & Licenses
-      certifications: formData.certifications || 'None',
-      license_number: formData.licenseNumber || 'Not provided',
-      expiry_date: formData.expiryDate || 'Not provided',
-      
-      // References
-      reference_1: reference1,
-      reference_2: reference2,
-      
-      // Files
-      files_info: filesInfo,
-      resume_attached: resume ? 'Yes' : 'No',
-      cover_letter_attached: coverLetter ? 'Yes' : 'No',
-      certifications_attached: certificationsFile ? 'Yes' : 'No',
-      
-      // Email settings
-      to_email: 'tescaregroup@tescaregroup.com.au',
-      reply_to: formData.email,
-      subject: `New Job Application from ${formData.firstName} ${formData.lastName} - ${formData.positionType || 'Position Not Specified'}`,
+    return { 
+      success: true, 
+      message: 'Job application submitted successfully!', 
+      data,
+      id: data.id 
     };
-
-    const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_JOB_APPLICATION_TEMPLATE_ID,
-      templateParams
-    );
-
-    if (response.status === 200) {
-      // Note: EmailJS free tier doesn't support file attachments directly
-      // File information is included in the email template
-      return { success: true, message: 'Job application submitted successfully!', response };
-    } else {
-      throw new Error('Failed to send job application via EmailJS');
-    }
   } catch (error) {
     console.error('Error submitting job application:', error);
     throw error;

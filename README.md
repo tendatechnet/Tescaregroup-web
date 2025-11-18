@@ -149,36 +149,45 @@ cp example.env .env
 Then edit `.env` and add your actual values:
 
 ```env
-# EmailJS Configuration (Required for forms)
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_contact_template_id_here
-VITE_EMAILJS_STAFF_REQUEST_TEMPLATE_ID=your_staff_request_template_id_here
-VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID=your_job_application_template_id_here
+# Supabase Configuration (Required for forms)
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 # Site URL (for SEO)
 VITE_SITE_URL=https://tescaregroup.com.au
 ```
 
-#### Setting Up EmailJS
+#### Setting Up Supabase
 
-1. **Sign up for EmailJS**: Go to [https://www.emailjs.com/](https://www.emailjs.com/) and create a free account
-2. **Add an Email Service**: 
-   - Go to Email Services in the dashboard
-   - Add your email service (Gmail, Outlook, etc.)
-   - Copy the Service ID
-3. **Create Email Templates**:
-   - Go to Email Templates
-   - **Contact Form Template**: Create with variables: `{{from_name}}`, `{{from_email}}`, `{{message}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
-   - **Staff Request Template**: Create with variables: `{{facility_name}}`, `{{contact_person}}`, `{{email}}`, `{{phone}}`, `{{staff_type}}`, `{{number_of_staff}}`, `{{shift_start_date}}`, `{{shift_start_time}}`, `{{shift_end_date}}`, `{{shift_end_time}}`, `{{additional_notes}}`, `{{file_attached}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
-   - **Job Application Template**: Create with variables: `{{first_name}}`, `{{last_name}}`, `{{full_name}}`, `{{email}}`, `{{phone}}`, `{{full_address}}`, `{{position_type}}`, `{{preferred_start_date}}`, `{{availability}}`, `{{current_employment}}`, `{{previous_employment}}`, `{{responsibilities}}`, `{{qualification}}`, `{{institution}}`, `{{graduation_year}}`, `{{additional_qualifications}}`, `{{certifications}}`, `{{license_number}}`, `{{expiry_date}}`, `{{reference_1}}`, `{{reference_2}}`, `{{files_info}}`, `{{resume_attached}}`, `{{cover_letter_attached}}`, `{{certifications_attached}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
-   - Copy all Template IDs
-4. **Get Your Public Key**:
-   - Go to Account > General
-   - Copy your Public Key
-5. **Add to .env file**: Add all the values to your `.env` file
+1. **Create Supabase Project**: 
+   - Go to [https://supabase.com](https://supabase.com) and sign up/login
+   - Click "New Project"
+   - Fill in project details and wait for setup to complete
 
-For detailed instructions, see the [EmailJS Tutorial](https://www.emailjs.com/docs/tutorial/overview/).
+2. **Set Up Database Schema**:
+   - Go to SQL Editor in your Supabase dashboard
+   - Copy and run the SQL from `supabase-schema.sql` file
+   - This creates all necessary tables for form submissions
+
+3. **Create Storage Buckets**:
+   - Go to Storage in your Supabase dashboard
+   - Create bucket: `staff-request-files` (Public: false)
+   - Create bucket: `job-applications` (Public: false)
+   - Set up bucket policies to allow uploads
+
+4. **Get Your Credentials**:
+   - Go to Settings → API
+   - Copy your Project URL → `VITE_SUPABASE_URL`
+   - Copy your anon/public key → `VITE_SUPABASE_ANON_KEY`
+
+5. **Add to .env file**: Add both values to your `.env` file
+
+6. **Optional - Email Notifications**:
+   - Set up Supabase Edge Functions to send email notifications
+   - Or use database triggers with services like Resend/SendGrid
+   - See `SUPABASE_MIGRATION.md` for more details
+
+For detailed Supabase documentation, see [https://supabase.com/docs](https://supabase.com/docs).
 
 ## 🏗 Building for Production
 
