@@ -768,8 +768,8 @@ export const Apply = () => {
                     <div className="flex flex-col items-center flex-1">
                       <div
                         className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${currentStep >= step.number
-                            ? 'bg-royal-blue text-white'
-                            : 'bg-gray-200 text-gray-500'
+                          ? 'bg-royal-blue text-white'
+                          : 'bg-gray-200 text-gray-500'
                           }`}
                       >
                         {step.number}
