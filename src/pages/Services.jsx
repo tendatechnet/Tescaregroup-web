@@ -4,7 +4,6 @@ import SEO from '../components/common/SEO';
 import { motion } from 'framer-motion';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
-import { ContactStrip } from '../components/common/ContactStrip';
 import { ClipboardCheck } from 'lucide-react';
 
 const services = [
@@ -248,7 +247,6 @@ export const Services = () => {
           </div>
         </section>
 
-        <ContactStrip />
       </div>
     </>
   );

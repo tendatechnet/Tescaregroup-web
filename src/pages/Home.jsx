@@ -23,7 +23,7 @@ export const Home = () => {
         <ServiceHighlights />
         {/* <VideoTestimonials /> */}
         <Testimonials />
-        <ContactStrip />
+        {/* <ContactStrip /> */}
       </div>
     </>
   );

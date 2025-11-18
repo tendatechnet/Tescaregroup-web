@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../components/common/SEO';
 import { Card } from '../components/common/Card';
-import { ContactStrip } from '../components/common/ContactStrip';
 import { ContactForm } from '../components/forms/ContactForm';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
@@ -170,7 +169,6 @@ const ContactContent = () => {
         </div>
       </section>
 
-      <ContactStrip />
     </div>
   );
 };
