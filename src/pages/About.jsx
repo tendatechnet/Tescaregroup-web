@@ -83,7 +83,6 @@ export const About = () => {
                                 transition={{ duration: 0.8 }}
                             >
                                 <h2 className="text-6xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
-                                <h2 className="text-6xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
                                     Who We Are
                                 </h2>
                                 <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
@@ -156,8 +155,12 @@ export const About = () => {
 
                                 {/* Content on Right */}
                                 <div>
+
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
+=======
                                     <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+
+                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Mission
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -292,7 +295,7 @@ export const About = () => {
                                 {/* Content on Right */}
                                 <div>
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
-                                    Where We Operate
+                                        Where We Operate
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
                                         TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
