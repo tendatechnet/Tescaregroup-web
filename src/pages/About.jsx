@@ -155,7 +155,11 @@ export const About = () => {
 
                                 {/* Content on Right */}
                                 <div>
+<<<<<<< HEAD
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
+=======
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+>>>>>>> 014d8a7 (Changes)
                                         Our Mission
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -200,7 +204,11 @@ export const About = () => {
                             >
                                 {/* Content on Left */}
                                 <div className="lg:order-1">
+<<<<<<< HEAD
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
+=======
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+>>>>>>> 014d8a7 (Changes)
                                         Our Vision
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
