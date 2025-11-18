@@ -2,37 +2,7 @@ import React from 'react';
 import SEO from '../components/common/SEO';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { Card } from '../components/common/Card';
-import { ContactStrip } from '../components/common/ContactStrip';
-import { Heart, Users, Award, MapPin } from 'lucide-react';
 import { Principles } from '../components/home/Princepal';
-
-const values = [
-    {
-        icon: Heart,
-        title: 'Quality',
-        description: 'We prioritize excellence in every placement, ensuring all professionals meet the highest standards of care and compliance',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: Users,
-        title: 'Reliability',
-        description: 'Consistent, dependable staffing solutions you can count on, available 24/7 to meet your facility\'s needs',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: Award,
-        title: 'Professionalism',
-        description: 'Maintaining the highest standards of conduct, expertise, and compliance in all our staffing placements',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: MapPin,
-        title: 'Care',
-        description: 'Compassionate, person-centered care is at the heart of every professional we connect with your facility',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-];
 
 export const About = () => {
     return (
@@ -156,8 +126,6 @@ export const About = () => {
                                 {/* Content on Right */}
                                 <div>
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
-                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
-                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Mission
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -181,7 +149,7 @@ export const About = () => {
                                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                             </svg>
                                             <span className="text-gray-800 text-lg">Customer-Centric Approach</span>
-                   </div>
+                                        </div>
                                         <div className="flex items-start gap-3">
                                             <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
