@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../common/Button';
+import { UserPlus } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
@@ -53,7 +54,8 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
-            <Button to="/request-staff" variant="secondary" size="lg" className="text-lg px-8 py-4">
+            <Button to="/request-staff" variant="yellow" size="lg" className="text-lg px-8 py-4">
+            <UserPlus size={20} className="mr-2" />
               Request Staff Now
             </Button>
             <Button

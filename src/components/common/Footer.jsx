@@ -87,8 +87,8 @@ export const Footer = () => {
                             </li>
                         </ul>
                         <div className="mt-6">
-                            <Link to="/request-staff" className="inline-flex items-center gap-2 bg-warm-beige hover:bg-powder-blue text-royal-blue font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
-                                <UserPlus size={20} />
+                            <Link to="/request-staff"  size="lg" className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                                <UserPlus size={20} className="mr-2" />
                                 Request Staff
                             </Link>
                         </div>
