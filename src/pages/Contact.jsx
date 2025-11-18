@@ -97,8 +97,8 @@ const ContactContent = () => {
                     <div>
                       <h3 className="font-heading font-semibold text-royal-blue mb-2 text-lg">Phone</h3>
                       <p className="text-gray-700">
-                        Emergency Hotline: <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:text-royal-blue-dark font-semibold">+61 XXX XXX XXX</a><br />
-                        General Inquiries: <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:text-royal-blue-dark font-semibold">+61 XXX XXX XXX</a>
+                        Emergency Hotline: <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:text-royal-blue-dark font-semibold">+61 430 186 328</a><br />
+                        General Inquiries: <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:text-royal-blue-dark font-semibold">+61 430 186 328</a>
                       </p>
                     </div>
                   </div>

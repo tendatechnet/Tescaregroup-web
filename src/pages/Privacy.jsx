@@ -513,7 +513,7 @@ export const Privacy = () => {
                         <p className="font-semibold text-royal-blue mb-2">To Exercise Your Rights:</p>
                         <p className="text-sm">
                           Contact us at <a href="mailto:privacy@tescaregroup.com.au" className="text-royal-blue hover:underline">privacy@tescaregroup.com.au</a> or 
-                          call <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:underline">+61 XXX XXX XXX</a>. 
+                          call <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:underline">+61 430 186 328</a>. 
                           We will respond to your request within 30 days.
                         </p>
                       </div>
@@ -597,7 +597,7 @@ export const Privacy = () => {
                         <p className="mb-2">
                           <strong>Phone:</strong>{' '}
                           <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:underline">
-                            +61 XXX XXX XXX
+                            +61 430 186 328
                           </a>
                         </p>
                         <p className="mb-2">

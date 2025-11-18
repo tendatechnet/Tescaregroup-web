@@ -669,7 +669,7 @@ export const Disclaimer = () => {
                         <p className="mb-2">
                           <strong>Phone:</strong>{' '}
                           <a href="tel:+61-XXX-XXX-XXX" className="text-royal-blue hover:underline">
-                            +61 XXX XXX XXX
+                            +61 430 186 328
                           </a>
                         </p>
                         <p className="mb-2">

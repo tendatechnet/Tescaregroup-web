@@ -24,7 +24,7 @@ describe('Footer', () => {
 
   it('renders contact information', () => {
     renderWithRouter(<Footer />);
-    expect(screen.getByText(/\+61 XXX XXX XXX/i)).toBeInTheDocument();
+    expect(screen.getByText(/\+61 430 186 328/i)).toBeInTheDocument();
     expect(screen.getByText(/info@tescaregroup.com.au/i)).toBeInTheDocument();
     expect(screen.getByText(/NSW, VIC, QLD, WA, SA/i)).toBeInTheDocument();
   });
