@@ -297,7 +297,7 @@ export const About = () => {
 
                                 {/* Content on Right */}
                                 <div>
-                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
                                     Where We Operate
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
