@@ -119,115 +119,129 @@ export const About = () => {
                 </section>
 
                 {/* Vision & Mission */}
-                <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+                <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
-                        <div className="max-w-5xl mx-auto space-y-12">
-                            {/* Mission Section */}
+                        <div className="max-w-7xl mx-auto space-y-24">
+                            {/* Mission Section - Content on Right, Images on Left */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
+                                className="grid lg:grid-cols-2 gap-12 items-center"
                             >
-                                <Card className="bg-gradient-to-br from-warm-beige to-powder-blue border-none">
-                                    <div className="flex items-start gap-4 mb-6">
-                                        <div className="w-12 h-12 bg-royal-blue rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <Heart size={24} className="text-white" />
+                                {/* Images on Left */}
+                                <div className="relative h-[600px]">
+                                    {/* Larger Image - Healthcare planning/blueprints */}
+                                    <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1080"
+                                            alt="Healthcare planning and documentation"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    {/* Smaller Overlapping Image - Healthcare professionals */}
+                                    <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1080"
+                                            alt="Healthcare professionals collaborating"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Content on Right */}
+                                <div>
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                        Our Mission
+                                    </h3>
+                                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
+                                        To provide exceptional healthcare staffing services that exceed client expectations through innovation, quality professionalism, and a commitment to excellence. We aim to build lasting relationships and create staffing solutions that enhance care quality in aged-care facilities. We aim to create solutions that inspire and improve the lives of our clients and their residents. Through precision, expertise, and a customer-centric approach, we strive to exceed expectations in every placement. Our dedication to integrity and excellence drives us to build lasting relationships and a legacy of trust.
+                                    </p>
+                                    <div className="space-y-4">
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Fostering Sustainable Growth and Quality Development</span>
                                         </div>
-                                        <div>
-                                            <h3 className="text-3xl font-heading font-bold text-royal-blue mb-4">
-                                                Our Mission
-                                            </h3>
-                                            <p className="text-gray-800 leading-relaxed text-lg mb-6 font-medium">
-                                                To ensure every aged-care facility has reliable access to skilled professionals when they need them, enabling consistent, high-quality care for residents across Australia.
-                                            </p>
-                                            <div className="grid md:grid-cols-2 gap-4">
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-royal-blue mb-1">Reliable Access</h4>
-                                                        <p className="text-gray-700 text-sm">Ensuring facilities always have access to qualified staff when needed</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-royal-blue mb-1">Skilled Professionals</h4>
-                                                        <p className="text-gray-700 text-sm">Connecting facilities with fully vetted, qualified healthcare workers</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-royal-blue mb-1">Consistent Support</h4>
-                                                        <p className="text-gray-700 text-sm">Providing ongoing, reliable staffing solutions for long-term success</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-royal-blue rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-royal-blue mb-1">Quality Care</h4>
-                                                        <p className="text-gray-700 text-sm">Enabling facilities to deliver exceptional care through consistent staffing</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Innovating for a Sustainable Future</span>
+                                        </div>
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Customer-Centric Approach</span>
+                                        </div>
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Building Stronger Communities</span>
                                         </div>
                                     </div>
-                                </Card>
+                                </div>
                             </motion.div>
 
-                            {/* Vision Section */}
+                            {/* Vision Section - Content on Left, Images on Right */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
+                                className="grid lg:grid-cols-2 gap-12 items-center"
                             >
-                                <Card className="h-full bg-gradient-to-br from-navy to-navy-dark text-white border-none">
-                                    <div className="flex items-start gap-4 mb-6">
-                                        <div className="w-12 h-12 bg-warm-beige rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <Award size={24} className="text-royal-blue" />
+                                {/* Content on Left */}
+                                <div className="lg:order-1">
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                        Our Vision
+                                    </h3>
+                                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
+                                        At TES Care Group, our vision is to redefine the future of healthcare staffing through innovation, excellence, and reliability. We aim to create staffing solutions that not only inspire but also contribute to the well-being of aged-care facilities and their residents. By embracing cutting-edge technology and best practices, we strive to lead the industry toward a smarter, more efficient future. Our focus is on delivering value, quality, and longevity in every placement we make. Together, we envision a world where reliable staffing empowers progress and transforms care quality.
+                                    </p>
+                                    <div className="space-y-4">
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Inspiring Modern Healthcare Staffing</span>
                                         </div>
-                                        <div>
-                                            <h3 className="text-3xl font-heading font-bold mb-4">
-                                                Our Vision
-                                            </h3>
-                                            <p className="text-gray-100 leading-relaxed text-lg mb-6">
-                                                To be Australia's most trusted staffing partner for aged-care providers, setting the industry standard for reliability, compliance, and comprehensive service coverage.
-                                            </p>
-                                            <div className="grid md:grid-cols-2 gap-4">
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-warm-beige mb-1">Industry Leadership</h4>
-                                                        <p className="text-gray-300 text-sm">Setting the standard for aged-care staffing excellence</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-warm-beige mb-1">National Coverage</h4>
-                                                        <p className="text-gray-300 text-sm">Serving facilities across all Australian states and territories</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-warm-beige mb-1">Trusted Partnership</h4>
-                                                        <p className="text-gray-300 text-sm">Building long-term relationships with aged-care providers</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-warm-beige rounded-full mt-2 flex-shrink-0"></div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-warm-beige mb-1">Comprehensive Service</h4>
-                                                        <p className="text-gray-300 text-sm">Offering complete staffing solutions from temporary to contract roles</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="flex items-start gap-3">
+                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-800 text-lg">Pioneering Sustainable Staffing Solutions</span>
                                         </div>
                                     </div>
-                                </Card>
+                                </div>
+
+                                {/* Images on Right */}
+                                <div className="relative h-[600px] lg:order-2">
+                                    {/* Larger Image - Healthcare professional with technology */}
+                                    <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1080"
+                                            alt="Healthcare professional using technology"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    {/* Smaller Overlapping Image - Healthcare team collaboration */}
+                                    <div className="absolute -bottom-8 -left-8 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=600"
+                                            alt="Healthcare team collaboration"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
                             </motion.div>
                         </div>
                     </div>
