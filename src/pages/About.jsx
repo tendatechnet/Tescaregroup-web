@@ -83,6 +83,7 @@ export const About = () => {
                                 transition={{ duration: 0.8 }}
                             >
                                 <h2 className="text-6xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
+                                <h2 className="text-6xl md:text-5xl font-heading font-bold text-royal-blue mb-6">
                                     Who We Are
                                 </h2>
                                 <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
@@ -160,6 +161,7 @@ export const About = () => {
 =======
                                     <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
 >>>>>>> 014d8a7 (Changes)
+                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Mission
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -204,11 +206,7 @@ export const About = () => {
                             >
                                 {/* Content on Left */}
                                 <div className="lg:order-1">
-<<<<<<< HEAD
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
-=======
-                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
->>>>>>> 014d8a7 (Changes)
                                         Our Vision
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
@@ -297,7 +295,7 @@ export const About = () => {
 
                                 {/* Content on Right */}
                                 <div>
-                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                    <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                     Where We Operate
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
