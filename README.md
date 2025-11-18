@@ -149,11 +149,12 @@ cp example.env .env
 Then edit `.env` and add your actual values:
 
 ```env
-# EmailJS Configuration (Required for contact form)
+# EmailJS Configuration (Required for forms)
 VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 VITE_EMAILJS_SERVICE_ID=your_service_id_here
 VITE_EMAILJS_TEMPLATE_ID=your_contact_template_id_here
 VITE_EMAILJS_STAFF_REQUEST_TEMPLATE_ID=your_staff_request_template_id_here
+VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID=your_job_application_template_id_here
 
 # Site URL (for SEO)
 VITE_SITE_URL=https://tescaregroup.com.au
@@ -168,9 +169,10 @@ VITE_SITE_URL=https://tescaregroup.com.au
    - Copy the Service ID
 3. **Create Email Templates**:
    - Go to Email Templates
-   - Create a template for the contact form with variables: `{{from_name}}`, `{{from_email}}`, `{{message}}`, `{{subject}}`
-   - Create a template for staff requests with variables: `{{facility_name}}`, `{{contact_person}}`, `{{email}}`, `{{phone}}`, `{{staff_type}}`, etc.
-   - Copy the Template IDs
+   - **Contact Form Template**: Create with variables: `{{from_name}}`, `{{from_email}}`, `{{message}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
+   - **Staff Request Template**: Create with variables: `{{facility_name}}`, `{{contact_person}}`, `{{email}}`, `{{phone}}`, `{{staff_type}}`, `{{number_of_staff}}`, `{{shift_start_date}}`, `{{shift_start_time}}`, `{{shift_end_date}}`, `{{shift_end_time}}`, `{{additional_notes}}`, `{{file_attached}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
+   - **Job Application Template**: Create with variables: `{{first_name}}`, `{{last_name}}`, `{{full_name}}`, `{{email}}`, `{{phone}}`, `{{full_address}}`, `{{position_type}}`, `{{preferred_start_date}}`, `{{availability}}`, `{{current_employment}}`, `{{previous_employment}}`, `{{responsibilities}}`, `{{qualification}}`, `{{institution}}`, `{{graduation_year}}`, `{{additional_qualifications}}`, `{{certifications}}`, `{{license_number}}`, `{{expiry_date}}`, `{{reference_1}}`, `{{reference_2}}`, `{{files_info}}`, `{{resume_attached}}`, `{{cover_letter_attached}}`, `{{certifications_attached}}`, `{{subject}}`, `{{to_email}}`, `{{reply_to}}`
+   - Copy all Template IDs
 4. **Get Your Public Key**:
    - Go to Account > General
    - Copy your Public Key

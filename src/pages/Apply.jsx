@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SEO from '../components/common/SEO';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
-import { Upload, FileText, User, Briefcase, GraduationCap, Award, Check } from 'lucide-react';
+import { Upload, FileText, User, Briefcase, GraduationCap, Award, Check, AlertCircle } from 'lucide-react';
+import { submitJobApplication, validateEmail, validatePhone } from '../utils/api';
 
 export const Apply = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +18,12 @@ export const Apply = () => {
     city: '',
     state: '',
     postcode: '',
-    
+
     // Position Information
     positionType: '',
     preferredStartDate: '',
     availability: '',
-    
+
     // Employment History
     currentEmployer: '',
     currentPosition: '',
@@ -32,18 +34,18 @@ export const Apply = () => {
     previousStartDate: '',
     previousEndDate: '',
     responsibilities: '',
-    
+
     // Education
     qualification: '',
     institution: '',
     graduationYear: '',
     additionalQualifications: '',
-    
+
     // Certifications & Licenses
     certifications: '',
     licenseNumber: '',
     expiryDate: '',
-    
+
     // References
     ref1Name: '',
     ref1Position: '',
@@ -53,7 +55,7 @@ export const Apply = () => {
     ref2Position: '',
     ref2Phone: '',
     ref2Email: '',
-    
+
     // Documents
     resume: null,
     coverLetter: null,
@@ -64,6 +66,7 @@ export const Apply = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const steps = [
     { number: 1, title: 'Personal Information' },
@@ -89,26 +92,29 @@ export const Apply = () => {
 
   const validateStep = (step) => {
     const newErrors = {};
-    
+
     if (step === 1) {
       if (!formData.firstName) newErrors.firstName = 'First name is required';
       if (!formData.lastName) newErrors.lastName = 'Last name is required';
       if (!formData.email) newErrors.email = 'Email is required';
       if (!formData.phone) newErrors.phone = 'Phone is required';
-      if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
-        newErrors.email = 'Email is invalid';
+      if (formData.email && !validateEmail(formData.email)) {
+        newErrors.email = 'Please enter a valid email address';
+      }
+      if (formData.phone && !validatePhone(formData.phone)) {
+        newErrors.phone = 'Please enter a valid Australian phone number';
       }
     }
-    
+
     if (step === 2) {
       if (!formData.positionType) newErrors.positionType = 'Position type is required';
       if (!formData.availability) newErrors.availability = 'Availability is required';
     }
-    
+
     if (step === 6) {
       if (!formData.resume) newErrors.resume = 'Resume is required';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -125,15 +131,24 @@ export const Apply = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError(null);
+
     if (!validateStep(6)) return;
-    
+
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+
+    try {
+      await submitJobApplication(
+        formData,
+        formData.resume,
+        formData.coverLetter,
+        formData.certificationsFile
+      );
+
       setIsSubmitting(false);
       setShowSuccess(true);
-      // Reset form after 3 seconds
+
+      // Reset form after 5 seconds
       setTimeout(() => {
         setFormData({
           firstName: '', lastName: '', email: '', phone: '', address: '', city: '', state: '', postcode: '',
@@ -148,8 +163,13 @@ export const Apply = () => {
         });
         setCurrentStep(1);
         setShowSuccess(false);
-      }, 3000);
-    }, 2000);
+        setSubmitError(null);
+      }, 5000);
+    } catch (error) {
+      console.error('Application submission error:', error);
+      setIsSubmitting(false);
+      setSubmitError(error.message || 'Failed to submit application. Please try again or contact us directly.');
+    }
   };
 
   const renderStepContent = () => {
@@ -258,7 +278,7 @@ export const Apply = () => {
             </div>
           </div>
         );
-      
+
       case 2:
         return (
           <div className="space-y-6">
@@ -310,7 +330,7 @@ export const Apply = () => {
             </div>
           </div>
         );
-      
+
       case 3:
         return (
           <div className="space-y-6">
@@ -423,7 +443,7 @@ export const Apply = () => {
             </div>
           </div>
         );
-      
+
       case 4:
         return (
           <div className="space-y-6">
@@ -520,7 +540,7 @@ export const Apply = () => {
             </div>
           </div>
         );
-      
+
       case 5:
         return (
           <div className="space-y-6">
@@ -622,7 +642,7 @@ export const Apply = () => {
             </div>
           </div>
         );
-      
+
       case 6:
         return (
           <div className="space-y-6">
@@ -697,14 +717,14 @@ export const Apply = () => {
               </div>
               <div className="p-4 bg-powder-blue/30 rounded-lg border border-powder-blue/50">
                 <p className="text-sm text-gray-700">
-                  By submitting this application, you confirm that all information provided is accurate and complete. 
+                  By submitting this application, you confirm that all information provided is accurate and complete.
                   You consent to TES Care Group contacting your references and conducting necessary background checks.
                 </p>
               </div>
             </div>
           </div>
         );
-      
+
       default:
         return null;
     }
@@ -747,11 +767,10 @@ export const Apply = () => {
                   <React.Fragment key={step.number}>
                     <div className="flex flex-col items-center flex-1">
                       <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${
-                          currentStep >= step.number
+                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${currentStep >= step.number
                             ? 'bg-royal-blue text-white'
                             : 'bg-gray-200 text-gray-500'
-                        }`}
+                          }`}
                       >
                         {step.number}
                       </div>
@@ -761,9 +780,8 @@ export const Apply = () => {
                     </div>
                     {index < steps.length - 1 && (
                       <div
-                        className={`flex-1 h-1 mx-2 transition-all duration-300 ${
-                          currentStep > step.number ? 'bg-royal-blue' : 'bg-gray-200'
-                        }`}
+                        className={`flex-1 h-1 mx-2 transition-all duration-300 ${currentStep > step.number ? 'bg-royal-blue' : 'bg-gray-200'
+                          }`}
                       />
                     )}
                   </React.Fragment>
@@ -791,6 +809,20 @@ export const Apply = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  {submitError && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                      <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
+                      <div>
+                        <p className="text-red-800 font-medium">{submitError}</p>
+                        <p className="text-red-600 text-sm mt-1">
+                          You can also contact us at{' '}
+                          <a href="mailto:tescaregroup@tescaregroup.com.au" className="underline font-semibold">
+                            tescaregroup@tescaregroup.com.au
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   {renderStepContent()}
 
                   {/* Navigation Buttons */}
