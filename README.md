@@ -140,12 +140,43 @@ The project uses ESLint for code quality. Run `npm run lint` to check for issues
 
 ### Environment Variables
 
-Create a `.env` file in the root directory for environment-specific variables:
+Create a `.env` file in the root directory for environment-specific variables. You can copy `example.env` as a starting point:
+
+```bash
+cp example.env .env
+```
+
+Then edit `.env` and add your actual values:
 
 ```env
-VITE_API_URL=your_api_url
+# EmailJS Configuration (Required for contact form)
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_contact_template_id_here
+VITE_EMAILJS_STAFF_REQUEST_TEMPLATE_ID=your_staff_request_template_id_here
+
+# Site URL (for SEO)
 VITE_SITE_URL=https://tescaregroup.com.au
 ```
+
+#### Setting Up EmailJS
+
+1. **Sign up for EmailJS**: Go to [https://www.emailjs.com/](https://www.emailjs.com/) and create a free account
+2. **Add an Email Service**: 
+   - Go to Email Services in the dashboard
+   - Add your email service (Gmail, Outlook, etc.)
+   - Copy the Service ID
+3. **Create Email Templates**:
+   - Go to Email Templates
+   - Create a template for the contact form with variables: `{{from_name}}`, `{{from_email}}`, `{{message}}`, `{{subject}}`
+   - Create a template for staff requests with variables: `{{facility_name}}`, `{{contact_person}}`, `{{email}}`, `{{phone}}`, `{{staff_type}}`, etc.
+   - Copy the Template IDs
+4. **Get Your Public Key**:
+   - Go to Account > General
+   - Copy your Public Key
+5. **Add to .env file**: Add all the values to your `.env` file
+
+For detailed instructions, see the [EmailJS Tutorial](https://www.emailjs.com/docs/tutorial/overview/).
 
 ## 🏗 Building for Production
 
