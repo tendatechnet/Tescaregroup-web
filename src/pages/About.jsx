@@ -2,37 +2,7 @@ import React from 'react';
 import SEO from '../components/common/SEO';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { Card } from '../components/common/Card';
-import { ContactStrip } from '../components/common/ContactStrip';
-import { Heart, Users, Award, MapPin } from 'lucide-react';
 import { Principles } from '../components/home/Princepal';
-
-const values = [
-    {
-        icon: Heart,
-        title: 'Quality',
-        description: 'We prioritize excellence in every placement, ensuring all professionals meet the highest standards of care and compliance',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: Users,
-        title: 'Reliability',
-        description: 'Consistent, dependable staffing solutions you can count on, available 24/7 to meet your facility\'s needs',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: Award,
-        title: 'Professionalism',
-        description: 'Maintaining the highest standards of conduct, expertise, and compliance in all our staffing placements',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-    {
-        icon: MapPin,
-        title: 'Care',
-        description: 'Compassionate, person-centered care is at the heart of every professional we connect with your facility',
-        gradient: 'from-purple-500 to-purple-600',
-    },
-];
 
 export const About = () => {
     return (
@@ -251,7 +221,7 @@ export const About = () => {
                 {/* Core Values */}
 
                 <Principles />
-               
+
 
                 {/* Service Area with Image */}
                 <section className="py-20 bg-white">
@@ -290,18 +260,18 @@ export const About = () => {
                                 {/* Content on Right */}
                                 <div>
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
-                                    Where We Operate
+                                        Where We Operate
                                     </h3>
                                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                                    TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
+                                        TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
 
 
                                     </p>
-                                    
+
                                 </div>
                             </motion.div>
 
-                          
+
                         </div>
                     </div>
                 </section>
