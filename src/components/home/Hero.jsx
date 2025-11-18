@@ -33,7 +33,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-tight text-white drop-shadow-2xl">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-heading font-bold mb-8 leading-tight text-white drop-shadow-2xl">
               Reliable Staffing for Aged-Care Facilities
             </h1>
           </motion.div>

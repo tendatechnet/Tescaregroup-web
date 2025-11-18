@@ -8,9 +8,9 @@ export const Footer = () => {
     return (
         <footer className="bg-gradient-to-br from-royal-blue via-royal-blue-dark to-royal-blue-light text-white">
             <div className="container mx-auto px-4 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
                     {/* Company Info */}
-                    <div className="lg:col-span-1">
+                    <div className="lg:col-span-2">
                         <h3 className="text-3xl font-heading font-bold mb-6 text-white">TES Care Group</h3>
                         <p className="text-white/90 leading-relaxed text-base">
                             Dedicated healthcare staffing across Australia. We connect qualified, compassionate professionals with aged-care facilities, disability services, and community organisations nationwide.
@@ -61,8 +61,8 @@ export const Footer = () => {
                     </div>
 
                     {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-heading font-semibold mb-6 text-white">Contact Us</h4>
+                    <div className='lg:col-span-2'>
+                        <h4 className="text-lg font-heading font-semibold mb-6 text-white lg:col-span-2">Contact Us</h4>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <Phone className="flex-shrink-0 mt-1 text-white/80" size={20} />
