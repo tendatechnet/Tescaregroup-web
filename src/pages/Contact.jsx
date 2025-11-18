@@ -82,7 +82,7 @@ const ContactContent = () => {
                       <h3 className="font-heading font-semibold text-royal-blue mb-2 text-lg">Address</h3>
                       <p className="text-gray-700">
                         TES Care Group<br />
-                        [Address to be provided]<br />
+                        2/47 smith Rd Elermore Vale 2287<br />
                         Australia
                       </p>
                     </div>
@@ -163,7 +163,7 @@ const ContactContent = () => {
               Serving NSW, VIC, QLD, WA, SA
             </p>
             <p className="text-white/90 text-lg">
-              Google Maps Embed - To be configured with actual location
+              2/47 smith Rd Elermore Vale 2287
             </p>
           </div>
         </div>

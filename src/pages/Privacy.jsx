@@ -601,7 +601,7 @@ export const Privacy = () => {
                           </a>
                         </p>
                         <p className="mb-2">
-                          <strong>Mail:</strong> [Address to be provided]
+                          <strong>Mail:</strong> 2/47 smith Rd Elermore Vale 2287
                         </p>
                         <p className="mt-4 text-sm">
                           <strong>Office of the Australian Information Commissioner (OAIC):</strong><br />
