@@ -19,6 +19,7 @@ export const Button = ({
     primary: 'bg-royal-blue text-white hover:bg-royal-blue-dark shadow-lg hover:shadow-xl',
     secondary: 'bg-warm-beige text-royal-blue hover:bg-powder-blue shadow-md hover:shadow-lg',
     outline: 'border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white',
+    yellow: 'bg-yellow-500 text-white hover:bg-yellow-600 shadow-lg hover:shadow-xl',
   };
 
   const sizeStyles = {
