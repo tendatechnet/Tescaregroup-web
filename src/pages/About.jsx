@@ -316,7 +316,6 @@ export const About = () => {
                     </div>
                 </section>
 
-                <ContactStrip />
             </div>
         </>
     );
