@@ -254,32 +254,55 @@ export const About = () => {
                
 
                 {/* Service Area with Image */}
-                <section className="py-20 relative overflow-hidden">
-                    <div className="absolute inset-0">
-                        <img
-                            src="https://images.unsplash.com/photo-1623852516990-b92586f7dd5c?q=80&w=1920"
-                            alt="Map of Australia aged care service areas"
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 to-navy-dark/90"></div>
-                    </div>
+                <section className="py-20 bg-white">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-7xl mx-auto space-y-24">
+                            {/* Mission Section - Content on Right, Images on Left */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="grid lg:grid-cols-2 gap-12 items-center"
+                            >
+                                {/* Images on Left */}
+                                <div className="relative h-[600px]">
+                                    {/* Larger Image - Healthcare planning/blueprints */}
+                                    <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1080"
+                                            alt="Healthcare planning and documentation"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    {/* Smaller Overlapping Image - Healthcare professionals */}
+                                    <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1080"
+                                            alt="Healthcare professionals collaborating"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
 
-                    <div className="container mx-auto px-4 relative z-10">
-                        <motion.div
-                            className="max-w-3xl mx-auto text-center"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                                Where We Operate
-                            </h2>
-                            <p className="text-xl text-gray-100 leading-relaxed">
-                                TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
-                            </p>
-                        </motion.div>
+                                {/* Content on Right */}
+                                <div>
+                                    <h3 className="text-5xl md:text-6xl font-heading font-bold text-black mb-6">
+                                    Where We Operate
+                                    </h3>
+                                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
+                                    TES Care Group provides comprehensive staffing solutions across New South Wales, Victoria, Queensland, Western Australia, and South Australia. Our extensive national network ensures we can meet your staffing needs in metropolitan, regional, and rural areas, providing consistent, reliable support wherever your facility is located.
+
+
+                                    </p>
+                                    
+                                </div>
+                            </motion.div>
+
+                          
+                        </div>
                     </div>
                 </section>
 
