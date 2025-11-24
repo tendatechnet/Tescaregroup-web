@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, UserPlus } from 'lucide-react';
-import tesCareGroupLogo from '../../assets/tes-care-group-logo.png';
+import tesFooterLogo from '../../assets/tes-footer.png';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -13,9 +13,9 @@ export const Footer = () => {
                     {/* Company Info */}
                     <div className="lg:col-span-2">
                         <img
-                            src={tesCareGroupLogo}
+                            src={tesFooterLogo}
                             alt="TES Care Group - Together Empowering Support"
-                            className="h-16 mb-6 w-auto object-contain brightness-0 invert"
+                            className="h-16 mb-6 w-auto object-contain "
                         />
                         <p className="text-white/90 leading-relaxed text-base">
                             Dedicated healthcare staffing across Australia. We connect qualified, compassionate professionals with aged-care facilities, disability services, and community organisations nationwide.
