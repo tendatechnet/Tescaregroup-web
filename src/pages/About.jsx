@@ -128,33 +128,43 @@ export const About = () => {
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Mission
                                     </h3>
-                                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                                        To provide exceptional healthcare staffing services that exceed client expectations through innovation, quality professionalism, and a commitment to excellence. We aim to build lasting relationships and create staffing solutions that enhance care quality in aged-care facilities. We aim to create solutions that inspire and improve the lives of our clients and their residents. Through precision, expertise, and a customer-centric approach, we strive to exceed expectations in every placement. Our dedication to integrity and excellence drives us to build lasting relationships and a legacy of trust.
-                                    </p>
-                                    <div className="space-y-4">
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Fostering Sustainable Growth and Quality Development</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Innovating for a Sustainable Future</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Customer-Centric Approach</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Building Stronger Communities</span>
+                                    <div className="space-y-4 text-lg text-gray-800 leading-relaxed mb-8">
+                                        <p>
+                                            TES Care Group's mission is to ensure every aged-care facility across Australia has reliable, timely access to skilled and compassionate professionals. We are committed to supporting exceptional resident care by delivering consistent staffing solutions, strong communication, and dedicated 24/7 support.
+                                        </p>
+                                        <p>
+                                            Through our focus on quality, reliability, and dignity in care, we aim to make staffing simple, dependable, and aligned with the needs of aged-care providers nationwide.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-2xl font-heading font-bold text-royal-blue mb-4">
+                                            Mission Pillars
+                                        </h4>
+                                        <div className="space-y-3">
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Ensuring timely and reliable staffing support</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Providing qualified, compassionate aged-care professionals</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Strengthening care quality through consistent staffing</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Offering 24/7 availability for urgent and ongoing needs</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -173,21 +183,43 @@ export const About = () => {
                                     <h3 className="text-6xl md:text-6xl font-heading font-bold text-royal-blue mb-6">
                                         Our Vision
                                     </h3>
-                                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                                        At TES Care Group, our vision is to redefine the future of healthcare staffing through innovation, excellence, and reliability. We aim to create staffing solutions that not only inspire but also contribute to the well-being of aged-care facilities and their residents. By embracing cutting-edge technology and best practices, we strive to lead the industry toward a smarter, more efficient future. Our focus is on delivering value, quality, and longevity in every placement we make. Together, we envision a world where reliable staffing empowers progress and transforms care quality.
-                                    </p>
-                                    <div className="space-y-4">
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Inspiring Modern Healthcare Staffing</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-800 text-lg">Pioneering Sustainable Staffing Solutions</span>
+                                    <div className="space-y-4 text-lg text-gray-800 leading-relaxed mb-8">
+                                        <p>
+                                            Our vision is to be Australia's most trusted aged-care staffing partner—setting the benchmark for quality, reliability, and compassionate care. We strive to enhance the aged-care sector by delivering dependable professionals who champion dignity, safety, and exceptional support for residents.
+                                        </p>
+                                        <p>
+                                            We envision a future where every aged-care facility feels confident, supported, and empowered through consistent staffing, enabling better outcomes for residents across the country.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-2xl font-heading font-bold text-royal-blue mb-4">
+                                            Vision Pillars
+                                        </h4>
+                                        <div className="space-y-3">
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Inspiring excellence in aged-care staffing</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Setting new standards in care quality and reliability</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Supporting dignified and person-centred care</span>
+                                            </div>
+                                            <div className="flex items-start gap-3">
+                                                <svg className="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                                <span className="text-gray-800 text-lg">Strengthening Australia's aged-care workforce</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
