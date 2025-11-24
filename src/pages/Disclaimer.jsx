@@ -662,7 +662,7 @@ export const Disclaimer = () => {
                         <p className="font-semibold text-royal-blue mb-4">TES Care Group</p>
                         <p className="mb-2">
                           <strong>Email:</strong>{' '}
-                          <a href="mailto:info@tescaregroup.com.au" className="text-royal-blue hover:underline">
+                          <a href="mailto:info@tescaregroup.com.au?subject=Disclaimer%20Inquiry" className="text-royal-blue hover:underline">
                             info@tescaregroup.com.au
                           </a>
                         </p>

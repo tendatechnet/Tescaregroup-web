@@ -112,8 +112,8 @@ const ContactContent = () => {
                     <div>
                       <h3 className="font-heading font-semibold text-royal-blue mb-2 text-lg">Email</h3>
                       <p className="text-gray-700">
-                        General: <a href="mailto:info@tescaregroup.com.au" className="text-royal-blue hover:text-royal-blue-dark font-semibold">info@tescaregroup.com.au</a><br />
-                        Staffing Requests: <a href="mailto:admin@tescaregroup.com.au" className="text-royal-blue hover:text-royal-blue-dark font-semibold">admin@tescaregroup.com.au</a>
+                        General: <a href="mailto:info@tescaregroup.com.au?subject=General%20Inquiry" className="text-royal-blue hover:text-royal-blue-dark font-semibold">info@tescaregroup.com.au</a><br />
+                        Staffing Requests: <a href="mailto:admin@tescaregroup.com.au?subject=Staffing%20Request" className="text-royal-blue hover:text-royal-blue-dark font-semibold">admin@tescaregroup.com.au</a>
                       </p>
                     </div>
                   </div>

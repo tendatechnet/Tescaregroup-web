@@ -444,7 +444,7 @@ This project is proprietary software for TES Care Group.
 ## 📞 Support
 
 For support, contact:
-- Email: info@tescaregroup.com.au
+- Email: [info@tescaregroup.com.au](mailto:info@tescaregroup.com.au)
 - Phone: +61 XXX XXX XXX
 
 ## 🙏 Acknowledgments

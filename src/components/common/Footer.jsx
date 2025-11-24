@@ -77,7 +77,7 @@ export const Footer = () => {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail className="flex-shrink-0 mt-1 text-white/80" size={20} />
-                                <a href="mailto:info@tescaregroup.com.au" className="text-white/90 hover:text-white transition-colors duration-300 break-all">
+                                <a href="mailto:info@tescaregroup.com.au?subject=General%20Inquiry" className="text-white/90 hover:text-white transition-colors duration-300 break-all">
                                     info@tescaregroup.com.au
                                 </a>
                             </li>

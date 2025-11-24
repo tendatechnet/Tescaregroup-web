@@ -130,7 +130,7 @@ export const ContactForm = () => {
             <p className="text-red-800 font-medium">{submitError}</p>
             <p className="text-red-600 text-sm mt-1">
               You can also reach us at{' '}
-              <a href="mailto:info@tescaregroup.com.au" className="underline font-semibold">
+              <a href="mailto:info@tescaregroup.com.au?subject=Contact%20Form%20Inquiry" className="underline font-semibold">
                 info@tescaregroup.com.au
               </a>
             </p>
