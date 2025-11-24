@@ -5,6 +5,7 @@ import { Footer } from './components/common/Footer';
 import { ChatBot } from './components/common/ChatBot';
 import SEO from './components/common/SEO';
 import AuthGuard from './components/common/AuthGuard';
+import ScrollToTop from './components/common/ScrollToTop';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
@@ -30,6 +31,7 @@ const PageLoader = () => (
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <SEO />
       <div className="min-h-screen flex flex-col">
         <Header />
