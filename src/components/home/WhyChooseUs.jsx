@@ -82,7 +82,7 @@ export const WhyChooseUs = () => {
                     <div className={`flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} text-white shadow-md`}>
                       <feature.icon size={16} />
                     </div>
-                    <h3 className="text-lg font-heading font-semibold text-royal-blue">
+                    <h3 className="text-lg font-heading font-semibold text-royal-blue ">
                       {feature.title}
                     </h3>
                   </div>

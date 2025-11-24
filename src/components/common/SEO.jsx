@@ -76,7 +76,7 @@ const SEO = ({
             '@type': 'Organization',
             name: 'TES Care Group',
             url: siteUrl,
-            logo: `${siteUrl}/logo.png`,
+            logo: `${siteUrl}/tes-care-group-logo.png`,
             description: description,
             address: {
                 '@type': 'PostalAddress',

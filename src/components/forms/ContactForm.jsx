@@ -8,6 +8,7 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
 
@@ -19,7 +20,7 @@ export const ContactForm = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -42,6 +43,10 @@ export const ContactForm = () => {
       newErrors.email = 'Email is required';
     } else if (!validateEmail(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
     }
 
     if (!formData.message.trim()) {
@@ -68,12 +73,13 @@ export const ContactForm = () => {
       await submitContactForm({
         name: formData.name.trim(),
         email: formData.email.trim(),
+        subject: formData.subject.trim(),
         message: formData.message.trim(),
       });
 
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
       // Auto-reset after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false);
@@ -144,9 +150,8 @@ export const ContactForm = () => {
             required
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white ${
-              errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white ${errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
+              }`}
             placeholder="John Smith"
           />
           {errors.name && (
@@ -168,15 +173,41 @@ export const ContactForm = () => {
             required
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white ${
-              errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white ${errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
+              }`}
             placeholder="john@example.com"
           />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
               <AlertCircle size={14} />
               {errors.email}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+            Subject <span className="text-red-500">*</span>
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            required
+            value={formData.subject}
+            onChange={handleInputChange}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white ${errors.subject ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
+              }`}
+          >
+            <option value="">Select a subject...</option>
+            <option value="Job Application">Job Application</option>
+            <option value="General Enquiry">General Enquiry</option>
+            <option value="Client Support">Client Support</option>
+            <option value="Feedback & Complaints">Feedback & Complaints</option>
+          </select>
+          {errors.subject && (
+            <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+              <AlertCircle size={14} />
+              {errors.subject}
             </p>
           )}
         </div>
@@ -192,9 +223,8 @@ export const ContactForm = () => {
             rows={6}
             value={formData.message}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all resize-none bg-white ${
-              errors.message ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all resize-none bg-white ${errors.message ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
+              }`}
             placeholder="How can we help you?"
           />
           <div className="mt-1 flex items-center justify-between">
@@ -210,10 +240,10 @@ export const ContactForm = () => {
           </div>
         </div>
 
-        <Button 
-          type="submit" 
-          variant="primary" 
-          className="w-full" 
+        <Button
+          type="submit"
+          variant="primary"
+          className="w-full"
           size="lg"
           disabled={isSubmitting}
         >

@@ -54,8 +54,8 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
-            <Button to="/request-staff" variant="yellow" size="lg" className="text-lg px-8 py-4">
-            <UserPlus size={20} className="mr-2" />
+            <Button to="/request-staff" variant="yellow" size="lg" className="text-lg px-8 py-4 !bg-[#fcaf50] hover:!bg-[#fcaf50]/90">
+              <UserPlus size={20} className="mr-2" />
               Request Staff Now
             </Button>
             <Button

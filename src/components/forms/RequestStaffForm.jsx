@@ -388,7 +388,7 @@ export const RequestStaffForm = () => {
                     <option value="">Select Staff Type</option>
                     <option value="Registered Nurse">Registered Nurse (RN)</option>
                     <option value="Enrolled Nurse">Enrolled Nurse (EN)</option>
-                    <option value="Care Assistant">Personal Care Assistant (PCA)</option>
+                    <option value="Care Assistant">Personal Care Worker(PCW)</option>
                     <option value="Support Worker">Support Worker</option>
                     <option value="Other">Other (Specify in notes)</option>
                   </select>

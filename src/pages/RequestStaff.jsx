@@ -109,7 +109,7 @@ export const RequestStaff = () => {
                     </h3>
                     <ol className="space-y-3 list-decimal list-inside">
                       <li className="text-white/90 font-medium">
-                        We review your request within 30 minutes
+                        We review your request.
                       </li>
                       <li className="text-white/90 font-medium">
                         Our team contacts you to confirm details

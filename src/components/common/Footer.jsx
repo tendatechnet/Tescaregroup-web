@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, UserPlus } from 'lucide-react';
+import tesCareGroupLogo from '../../assets/tes-care-group-logo.png';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -11,7 +12,11 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
                     {/* Company Info */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-3xl font-heading font-bold mb-6 text-white">TES Care Group</h3>
+                        <img
+                            src={tesCareGroupLogo}
+                            alt="TES Care Group - Together Empowering Support"
+                            className="h-16 mb-6 w-auto object-contain brightness-0 invert"
+                        />
                         <p className="text-white/90 leading-relaxed text-base">
                             Dedicated healthcare staffing across Australia. We connect qualified, compassionate professionals with aged-care facilities, disability services, and community organisations nationwide.
                         </p>
@@ -66,7 +71,7 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <Phone className="flex-shrink-0 mt-1 text-white/80" size={20} />
-                                <a href="tel:+61-XXX-XXX-XXX" className="text-white/90 hover:text-white transition-colors duration-300">
+                                <a href="tel:+61430186328" className="text-white/90 hover:text-white transition-colors duration-300">
                                     +61 430 186 328
                                 </a>
                             </li>
@@ -87,7 +92,7 @@ export const Footer = () => {
                             </li>
                         </ul>
                         <div className="mt-6">
-                            <Link to="/request-staff"  size="lg" className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                            <Link to="/request-staff" size="lg" className="inline-flex items-center gap-2 bg-[#fcaf50] hover:bg-[#fcaf50]/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                                 <UserPlus size={20} className="mr-2" />
                                 Request Staff
                             </Link>

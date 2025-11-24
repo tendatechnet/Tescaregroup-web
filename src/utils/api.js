@@ -26,7 +26,7 @@ if (EMAILJS_PUBLIC_KEY) {
 
 /**
  * Submit contact form data via EmailJS
- * @param {Object} formData - Contact form data { name, email, message }
+ * @param {Object} formData - Contact form data { name, email, subject, message }
  * @returns {Promise<Object>} Response from EmailJS
  */
 export const submitContactForm = async (formData) => {
@@ -39,10 +39,11 @@ export const submitContactForm = async (formData) => {
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
+      subject: formData.subject || 'General Enquiry',
       message: formData.message,
       to_email: 'tescaregroup@tescaregroup.com.au', // Recipient email
       reply_to: formData.email,
-      subject: `New Contact Form Submission from ${formData.name}`,
+      email_subject: `New Contact Form: ${formData.subject || 'General Enquiry'} - from ${formData.name}`,
     };
 
     const response = await emailjs.send(

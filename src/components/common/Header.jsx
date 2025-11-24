@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import tesCareGroupLogo from '../../assets/tes-care-group-logo.png';
 
 const navLinks = [
     { name: 'Home', path: '/' },
@@ -25,10 +26,12 @@ export const Header = () => {
                 <div className="flex items-center justify-between h-20">
 
                     {/* Logo */}
-                    <Link to="/" className="flex items-center">
-                        <h1 className="text-2xl md:text-3xl font-heading font-bold text-royal-blue tracking-tight">
-                            TES Care Group
-                        </h1>
+                    <Link to="/" className="flex items-center gap-3">
+                        <img
+                            src={tesCareGroupLogo}
+                            alt="TES Care Group - Together Empowering Support"
+                            className="h-12 md:h-16 w-auto object-contain"
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}

@@ -46,7 +46,7 @@ const services = [
     features: [
       'Registered Nurses (RN)',
       'Enrolled Nurses (EN)',
-      'Personal Care Assistants (PCA)',
+      'Personal Care Worker (PCW)',
       'Allied Health Professionals',
     ],
     image: 'https://images.unsplash.com/photo-1653508311277-1ecf6ee52c5e?q=80&w=800',
@@ -147,7 +147,7 @@ export const Services = () => {
                         <ul className="space-y-4">
                           {service.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-4">
-                              <div className="flex-shrink-0 w-8 h-8 bg-royal-blue/10 rounded-lg flex items-center justify-center mt-0.5">
+                              <div className="flex-shrink-0 w-8 h-8 bg-powder-blue/70 rounded-lg flex items-center justify-center mt-0.5">
                                 <ClipboardCheck className="text-royal-blue" size={18} />
                               </div>
                               <span className="text-gray-700 text-base leading-relaxed pt-1">{feature}</span>
@@ -190,20 +190,20 @@ export const Services = () => {
                 {processSteps.map((step, index) => (
                   <motion.div
                     key={index}
-                    className="relative text-center"
+                    className="relative text-center h-full flex flex-col"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <Card className="bg-white/95 backdrop-blur-sm p-8 shadow-2xl border-0">
-                      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-royal-blue to-royal-blue-light text-white rounded-2xl text-3xl font-bold mb-6 shadow-xl">
+                    <Card className="bg-white/95 backdrop-blur-sm p-8 shadow-2xl border-0 h-full flex flex-col">
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-royal-blue to-royal-blue-light text-white rounded-2xl text-3xl font-bold mb-6 shadow-xl mx-auto">
                         {step.number}
                       </div>
                       <h3 className="text-2xl font-heading font-semibold text-royal-blue mb-4">
                         {step.title}
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed flex-grow">
                         {step.description}
                       </p>
                     </Card>
