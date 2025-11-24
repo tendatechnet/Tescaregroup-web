@@ -32,9 +32,9 @@ export const ChatBot = () => {
         // Simulate bot response
         setTimeout(() => {
             const botResponses = [
-                "Thank you for your message. Our team will get back to you shortly. For urgent staffing needs, please call us at +61 XXX XXX XXX.",
+                "Thank you for your message. Our team will get back to you shortly. For urgent staffing needs, please call us at +61 430 186 328.",
                 "I can help you with information about our services, request staff, or answer questions about TES Care Group. What would you like to know?",
-                "For immediate staffing assistance, you can submit a request through our 'Request Staff' page or contact us directly at +61 XXX XXX XXX.",
+                "For immediate staffing assistance, you can submit a request through our 'Request Staff' page or contact us directly at +61 430 186 328.",
                 "We provide staffing solutions across NSW, VIC, QLD, WA, and SA. Our team is available 24/7 for emergency staffing needs.",
             ];
             const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
@@ -147,7 +147,7 @@ export const ChatBot = () => {
                                 </button>
                             </div>
                             <p className="text-xs text-gray-500 mt-2 text-center">
-                                For urgent requests, call +61 XXX XXX XXX
+                                For urgent requests, call +61 430 186 328
                             </p>
                         </form>
                     </motion.div>

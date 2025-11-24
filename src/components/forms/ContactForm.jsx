@@ -97,7 +97,7 @@ export const ContactForm = () => {
           Thank you for contacting us. We'll get back to you as soon as possible.
         </p>
         <p className="text-gray-600 mb-8 text-sm">
-          For urgent matters, please call us at: <strong className="text-royal-blue">+61 XXX XXX XXX</strong>
+          For urgent matters, please call us at: <strong className="text-royal-blue">+61 430 186 328</strong>
         </p>
         <Button onClick={() => setIsSubmitted(false)} variant="primary">
           Send Another Message

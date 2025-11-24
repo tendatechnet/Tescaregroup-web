@@ -178,7 +178,7 @@ export const RequestStaffForm = () => {
       setCompletedSteps(new Set());
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError('Failed to submit request. Please try again or contact us directly at +61 XXX XXX XXX');
+      setSubmitError('Failed to submit request. Please try again or contact us directly at +61 430 186 328');
     } finally {
       setIsSubmitting(false);
     }
@@ -201,7 +201,7 @@ export const RequestStaffForm = () => {
           Thank you for your staffing request. Our team will contact you shortly to confirm the details and arrange suitable professionals.
         </p>
         <p className="text-gray-600 mb-8 text-sm">
-          For urgent requests, please call us at: <strong className="text-royal-blue">+61 XXX XXX XXX</strong>
+          For urgent requests, please call us at: <strong className="text-royal-blue">+61 430 186 328</strong>
         </p>
         <Button onClick={() => {
           setIsSubmitted(false);
@@ -316,7 +316,7 @@ export const RequestStaffForm = () => {
                   className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all bg-white text-lg ${
                     errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="+61 XXX XXX XXX"
+                  placeholder="+61 430 186 328"
                 />
                 {errors.phone && (
                   <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
